@@ -56,6 +56,13 @@ PNG brighten(PNG original, int amount)
     for (size_t yi = 0; yi < original.height(); yi++) {
         for (size_t xi = 0; xi < original.width(); xi++) {
             /// Your code here!
+           
+			original(yi,xi)->red=18;
+			original(yi,xi)->blue=116;
+			original(yi,xi)->green=92;
+
+
+
         }
     }
     return original;
@@ -74,6 +81,8 @@ PNG brighten(PNG original, int amount)
 PNG blendImages(PNG firstImage, PNG secondImage)
 {
     /// Your code here!
+	original
+    
     return firstImage;
 }
 
