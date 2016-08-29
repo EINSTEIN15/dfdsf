@@ -1,0 +1,35 @@
+Grading r1509 by nknipfe2 committed on Thu Aug 25 20:42:01 CDT 2016
+Monad Autograder
+Testing lab_intro at 2016-08-29 00:24:55
+
+"Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves." ~ Alan Kay
+
+Setting up test environment...
+Compiling...
+================================================================
+main.cpp:53:32: warning: unused parameter 'amount' [-Wunused-parameter]
+PNG brighten(PNG original, int amount)
+                               ^
+main.cpp:84:2: error: use of undeclared identifier 'original'
+        original
+        ^
+main.cpp:81:21: warning: unused parameter 'firstImage' [-Wunused-parameter]
+PNG blendImages(PNG firstImage, PNG secondImage)
+                    ^
+main.cpp:81:37: warning: unused parameter 'secondImage' [-Wunused-parameter]
+PNG blendImages(PNG firstImage, PNG secondImage)
+                                    ^
+3 warnings and 1 error generated.
+make: *** [main.o] Error 1
+make: *** Waiting for unfinished jobs....
+
+
+Running tests...
+================================================================
+Could not execute test cases
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+
