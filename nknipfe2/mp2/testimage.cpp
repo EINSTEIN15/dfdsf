@@ -19,7 +19,7 @@ int main()
     myImage->invertcolors();
     myImage->writeToFile("inverted.png");
 
-    myImage->flipleft();
+        myImage->flipleft();
     myImage->writeToFile("flipped.png");
 
     myImage->adjustbrightness(20, 20, -40);
