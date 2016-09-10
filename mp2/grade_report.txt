@@ -1,8 +1,8 @@
-Grading r8772 by enx-cs225autograder committed on Thu Sep  8 01:17:05 CDT 2016
+Grading r9344 by nknipfe2 committed on Fri Sep  9 12:48:53 CDT 2016
 Monad Autograder
-Testing mp2 at 2016-09-09 00:26:43
+Testing mp2 at 2016-09-10 01:44:51
 
-"You look at their elbows, they actually have many good theoretical elbows." ~ Prof. Jiawei Han
+"It'll work, the stack's just not big enough." ~ Eric Rosenberg
 
 Setting up test environment...
-Error: /dev/shm/cs225student/autograder/temp/mp2/Makefile does not exist.
+Error: /dev/shm/cs225student/autograder/temp/mp2/scene.h does not exist.
