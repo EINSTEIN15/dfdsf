@@ -1,8 +1,8 @@
-Grading r9344 by nknipfe2 committed on Fri Sep  9 12:48:53 CDT 2016
+Grading r9697 by enx-cs225autograder committed on Sat Sep 10 02:11:12 CDT 2016
 Monad Autograder
-Testing mp2 at 2016-09-10 01:44:51
+Testing mp2 at 2016-09-11 00:15:20
 
-"It'll work, the stack's just not big enough." ~ Eric Rosenberg
+"If I had a 3D Reese's chocolate printer I would use that thing all the time always." ~ Chase Geigle
 
 Setting up test environment...
 Error: /dev/shm/cs225student/autograder/temp/mp2/scene.h does not exist.
