@@ -1,8 +1,8 @@
-Grading r10017 by enx-cs225autograder committed on Sun Sep 11 00:19:37 CDT 2016
+Grading r11027 by enx-cs225autograder committed on Mon Sep 12 01:52:14 CDT 2016
 Monad Autograder
-Testing mp2 at 2016-09-12 01:06:39
+Testing mp2 at 2016-09-13 00:23:12
 
-"Find your points of interest, compute HOG features, bung them into a classifier, and see what you get." ~ D.A. Forsyth
+"You look at their elbows, they actually have many good theoretical elbows." ~ Prof. Jiawei Han
 
 Setting up test environment...
 Error: /dev/shm/cs225student/autograder/temp/mp2/scene.h does not exist.
