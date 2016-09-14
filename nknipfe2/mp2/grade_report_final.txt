@@ -1,0 +1,492 @@
+Grading r12552 by nknipfe2 committed on Tue Sep 13 20:43:26 CDT 2016
+Monad Autograder
+Testing mp2 at 2016-09-14 01:03:49
+
+"You think the sky is like a big big plate." ~ Prof. Jiawei Han
+
+Setting up test environment...
+Compiling...
+================================================================
+scene.cpp:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+scene.cpp:49:34: warning: unused parameter 'newmax' [-Wunused-parameter]
+void Scene:: changemaxlayers(int newmax)
+                                 ^
+scene.cpp:57:38: warning: unused parameter 'FileName' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                     ^
+scene.cpp:57:52: warning: unused parameter 'index' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                   ^
+scene.cpp:57:63: warning: unused parameter 'x' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                              ^
+scene.cpp:57:70: warning: unused parameter 'y' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                                     ^
+scene.cpp:70:20: warning: comparison between NULL and non-pointer ('int' and NULL) [-Wnull-arithmetic]
+  else if(newindex !=NULL)
+          ~~~~~~~~ ^ ~~~~
+scene.cpp:78:30: warning: unused parameter 'index' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                             ^
+scene.cpp:78:41: warning: unused parameter 'xcoord' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                                        ^
+scene.cpp:78:53: warning: unused parameter 'ycoord' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                                                    ^
+scene.cpp:120:31: warning: unused parameter 'index' [-Wunused-parameter]
+Image * Scene::getpicture(int index) const
+                              ^
+scene.cpp:124:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+scene.cpp:128:11: warning: comparison between NULL and non-pointer ('int' and NULL) [-Wnull-arithmetic]
+  if(index!=NULL)
+     ~~~~~^ ~~~~
+scene.cpp:145:46: warning: unused parameter 'source' [-Wunused-parameter]
+const Scene & Scene::operator= (const Scene &source)
+                                             ^
+scene.cpp:149:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+15 warnings generated.
+scene.cpp:40:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+scene.cpp:49:34: warning: unused parameter 'newmax' [-Wunused-parameter]
+void Scene:: changemaxlayers(int newmax)
+                                 ^
+scene.cpp:57:38: warning: unused parameter 'FileName' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                     ^
+scene.cpp:57:52: warning: unused parameter 'index' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                   ^
+scene.cpp:57:63: warning: unused parameter 'x' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                              ^
+scene.cpp:57:70: warning: unused parameter 'y' [-Wunused-parameter]
+void Scene :: addpicture(const char *FileName, int index, int x, int y)
+                                                                     ^
+scene.cpp:70:20: warning: comparison between NULL and non-pointer ('int' and NULL) [-Wnull-arithmetic]
+  else if(newindex !=NULL)
+          ~~~~~~~~ ^ ~~~~
+scene.cpp:78:30: warning: unused parameter 'index' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                             ^
+scene.cpp:78:41: warning: unused parameter 'xcoord' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                                        ^
+scene.cpp:78:53: warning: unused parameter 'ycoord' [-Wunused-parameter]
+void Scene :: translate( int index, int xcoord, int ycoord)
+                                                    ^
+scene.cpp:120:31: warning: unused parameter 'index' [-Wunused-parameter]
+Image * Scene::getpicture(int index) const
+                              ^
+scene.cpp:124:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+scene.cpp:128:11: warning: comparison between NULL and non-pointer ('int' and NULL) [-Wnull-arithmetic]
+  if(index!=NULL)
+     ~~~~~^ ~~~~
+scene.cpp:145:46: warning: unused parameter 'source' [-Wunused-parameter]
+const Scene & Scene::operator= (const Scene &source)
+                                             ^
+scene.cpp:149:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+15 warnings generated.
+
+
+Running tests...
+================================================================
+InvertColorsEven . . . . . . . . . [8 pts] - passed
+FlipLeftEven . . . . . . . . . . . [4 pts] - passed
+FlipLeftOdd  . . . . . . . . . . . [4 pts] - passed
+AdjustBrightnessEven . . . . . . . [3 pts] - passed
+AdjustBrightnessEven2  . . . . . . [3 pts] - FAILED: ./testimage.cpp:143: Assertion (*theImage == *soln) failed
+AdjustBrightnessEven3  . . . . . . [3 pts] - passed
+ImageMakefile  . . . . . . . . . . [5 pts] - passed
+Valgrind1 (asan) . . . . . . . . . [5 pts] - FAILED:     #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225st
+AddPictureValidIndex . . . . . . . [2 pts] - FAILED: Segmentation fault
+AddPictureInvalidIndex . . . . . . [2 pts] - FAILED: Segmentation fault
+ImageAssignmentOperator  . . . . . [2 pts] - FAILED: Segmentation fault
+SceneGetPictureInvalidIndex  . . . [2 pts] - FAILED: Segmentation fault
+SceneChangeMaxLayersLarger . . . . [2 pts] - FAILED: Segmentation fault
+SceneChangeMaxLayersSmaller (asan) [1 pts] - FAILED: Memory errors detected by ASAN
+SceneChangeMaxLayersInvalidChange  [2 pts] - FAILED: Segmentation fault
+SceneCopyCtor  . . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneCopyCtor2 . . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneAssignmentOperator  . . . . . [2 pts] - FAILED: Segmentation fault
+SceneAssignmentOperator2 . . . . . [2 pts] - FAILED: Segmentation fault
+SceneChangeLayer . . . . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneChangeLayerInvalid  . . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawScene . . . . . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneDrawScene2  . . . . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneDrawScene3  . . . . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneDrawScene4  . . . . . . . . . [3 pts] - FAILED: Segmentation fault
+SceneDrawSceneChangeLayer  . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawSceneDeletePicture  . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawSceneTranslate  . . . . . [2 pts] - FAILED: Segmentation fault
+SceneDrawSceneTranslate2 . . . . . [2 pts] - FAILED: Segmentation fault
+SceneTranslateInvalid  . . . . . . [2 pts] - FAILED: Segmentation fault
+SceneTranslateInvalid2 . . . . . . [1 pts] - FAILED: Segmentation fault
+SceneDeletePictureInvalid  . . . . [2 pts] - FAILED: Segmentation fault
+Valgrind2 (asan) . . . . . . . . . [5 pts] - FAILED: Memory errors detected by ASAN
+Valgrind3 (asan) . . . . . . . . . [5 pts] - FAILED: Memory errors detected by ASAN
+SceneMakefile  . . . . . . . . . . [5 pts] - passed
+
+
+Total score...
+================================================================
+TOTAL SCORE: 32
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+AdjustBrightnessEven2 [3 points]
+Result: FAILED: ./testimage.cpp:143: Assertion (*theImage == *soln) failed
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Valgrind1 (run under asan) [5 points]
+Result: FAILED:     #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225st
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind1 [worth 5 points, output below]
+
+=================================================================
+==19650==ERROR: LeakSanitizer: detected memory leaks
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x41edcb in operator new(unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:62:35
+    #1 0x65f989 in Image::Image() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65f989)
+    #2 0x65e886 in testingImages_t::testingImages_t() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65e886)
+    #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x6494c4)
+    #5 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #6 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #7 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #8 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #9 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #10 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #11 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #12 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #13 0x7f89625d8b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x41edcb in operator new(unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:62:35
+    #1 0x65f989 in Image::Image() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65f989)
+    #2 0x65e863 in testingImages_t::testingImages_t() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65e863)
+    #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x6494c4)
+    #5 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #6 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #7 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #8 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #9 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #10 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #11 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #12 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #13 0x7f89625d8b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x41edcb in operator new(unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:62:35
+    #1 0x65f989 in Image::Image() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65f989)
+    #2 0x65e840 in testingImages_t::testingImages_t() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65e840)
+    #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x6494c4)
+    #5 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #6 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #7 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #8 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #9 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #10 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #11 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #12 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #13 0x7f89625d8b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x41edcb in operator new(unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:62:35
+    #1 0x65f989 in Image::Image() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65f989)
+    #2 0x65e81f in testingImages_t::testingImages_t() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65e81f)
+    #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x6494c4)
+    #5 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #6 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #7 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #8 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #9 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #10 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #11 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #12 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #13 0x7f89625d8b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+
+Direct leak of 4 byte(s) in 1 object(s) allocated from:
+    #0 0x41edcb in operator new(unsigned long) /dev/shm/225/lm35/src/llvm/projects/compiler-rt/lib/asan/asan_new_delete.cc:62:35
+    #1 0x65f989 in Image::Image() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65f989)
+    #2 0x65e7fe in testingImages_t::testingImages_t() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65e7fe)
+    #3 0x63e968 in setUp() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x63e968)
+    #4 0x6494c4 in proxy_test::Valgrind1(util::sizedpipestream<512ul>&) (/dev/shm/cs225stu
+
+----------------------------------------------------------------
+AddPictureValidIndex [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+AddPictureInvalidIndex [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+ImageAssignmentOperator [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneGetPictureInvalidIndex [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeMaxLayersLarger [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeMaxLayersSmaller (run under asan) [1 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (2000ms timeout)
+Output:
+----------------------------------------------------------------
+Running SceneChangeMaxLayersSmaller [worth 1 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==19672==ERROR: AddressSanitizer: stack-overflow on address 0x7ff8ff7016e8 (pc 0x00000067d9f1 bp 0x7ffef5660f70 sp 0x7ff8ff7016f0 T0)
+    #0 0x67d9f0 in Scene::Scene(int) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x67d9f0)
+    #1 0x64d7e1 in proxy_test::SceneChangeMaxLayersSmaller(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x64d7e1)
+    #2 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #3 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #4 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #5 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #6 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #7 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #8 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #9 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #10 0x7f37e4b19b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+    #11 0x4a37bc in _start (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4a37bc)
+
+SUMMARY: AddressSanitizer: stack-overflow ??:0 Scene::Scene(int)
+==19672==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+SceneChangeMaxLayersInvalidChange [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneCopyCtor [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneCopyCtor2 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneAssignmentOperator [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneAssignmentOperator2 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeLayer [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneChangeLayerInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene2 [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene3 [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawScene4 [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneChangeLayer [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneDeletePicture [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneTranslate [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDrawSceneTranslate2 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneTranslateInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneTranslateInvalid2 [1 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+SceneDeletePictureInvalid [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (2000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+Valgrind2 (run under asan) [5 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind2 [worth 5 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==19721==ERROR: AddressSanitizer: stack-overflow on address 0x7ff9e9587688 (pc 0x00000067d9f1 bp 0x7fffdf4e6f10 sp 0x7ff9e9587690 T0)
+    #0 0x67d9f0 in Scene::Scene(int) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x67d9f0)
+    #1 0x65c1d3 in proxy_test::Valgrind2(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65c1d3)
+    #2 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #3 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #4 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #5 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #6 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #7 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #8 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #9 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #10 0x7f2fbf9edb14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+    #11 0x4a37bc in _start (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4a37bc)
+
+SUMMARY: AddressSanitizer: stack-overflow ??:0 Scene::Scene(int)
+==19721==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+Valgrind3 (run under asan) [5 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Running Valgrind3 [worth 5 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==19735==ERROR: AddressSanitizer: stack-overflow on address 0x7ff72cbce868 (pc 0x00000067d9f1 bp 0x7ffd22b2e0f0 sp 0x7ff72cbce870 T0)
+    #0 0x67d9f0 in Scene::Scene(int) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x67d9f0)
+    #1 0x65d599 in proxy_test::Valgrind3(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x65d599)
+    #2 0x4ea848 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ea848)
+    #3 0x4cf9f3 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4cf9f3)
+    #4 0x4c153e in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4c153e)
+    #5 0x4bbd22 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4bbd22)
+    #6 0x4b19e7 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b19e7)
+    #7 0x4b0b87 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4b0b87)
+    #8 0x4ad2e9 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4ad2e9)
+    #9 0x4aac3e in main (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4aac3e)
+    #10 0x7f4d2b62eb14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+    #11 0x4a37bc in _start (/dev/shm/cs225student/autograder/monad/monad/mp2_grade/proxy-asan+0x4a37bc)
+
+SUMMARY: AddressSanitizer: stack-overflow ??:0 Scene::Scene(int)
+==19735==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 32
+
