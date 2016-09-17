@@ -15,8 +15,8 @@
 
 const double PI = 3.141592;
 
-Circle::Circle(const Vector2& pcenter, const RGBAPixel& pcolor, int pradius)
-    : radius_(pradius)
+Circle::Circle(const Vector2& pcenter,const RGBAPixel& pcolor,int pradius)
+  : Shape(pcenter, pcolor), radius_(pradius)
 {
     /* Nothing.  See initialization list. */
 }
@@ -117,7 +117,7 @@ int Circle::radius() const
     return this->radius_;
 }
 
-void Circle::set_radius(int pradius)
+void  Circle::set_radius(int pradius)
 {
-    this->radius_ = pradius;
+     this->radius_ = pradius;
 }
