@@ -60,8 +60,8 @@ void testInserts()
     cout << endl;
     cout << "Start by uncommenting lines " << (__LINE__ + 3) << " through " << (__LINE__ + 26) << "." << endl;
 
-    /* uncomment the below */
-    /*
+  
+    
     cout << "[main]: " << __func__ << "()" << endl;
     List<int> list;
 
@@ -84,13 +84,22 @@ void testInserts()
     cout << "[testInserts]: size: " << list2.size() << endl;
     if (list2.size() != 10)
         cout << "[testInserts]: Incorrect size" << endl;
-    */
+    
 }
 
 void testReverse()
 {
     cout << "[main]: " << __func__ << "()" << endl;
     PNG in("in_02.png");
+ List<int> list2;
+
+    // test insertBack
+    for (size_t i = 1; i <= 10; i++)
+        list2.insertBack(i);
+
+    cout << "[testInserts]: " << list2 << endl;
+    list2.reverse();
+ cout << "[testInserts]: " << list2 << endl;
 
     List<RGBAPixel> list = imageToList(in);
     list.reverse();
@@ -102,7 +111,19 @@ void testReverse()
 }
 
 void testReverseNth()
-{
+{  List<int> list2;
+
+  // test insertFront
+  //for (size_t i = 1; i <= 10; i++)
+  //list.insertFront(i);
+
+
+  // test insertFront
+      for (size_t i = 1; i <= 10; i++)
+	      list2.insertFront(i);
+   cout<<list2<<endl;
+   list2.reverseNth(10);
+   cout<<list2<<endl;
     cout << "[main]: " << __func__ << "()" << endl;
     PNG in("in_03.png");
 
@@ -125,6 +146,14 @@ void testReverseNth()
 
 void testWaterfall()
 {
+   List<int> list2;   
+
+ for (size_t i = 1; i <= 8; i++)
+         list2.insertFront(i);
+ // list2.reverse();
+   cout<<list2<<endl;
+   list2.waterfall();
+   cout<<list2<<endl;
     cout << "[main]: " << __func__ << "()" << endl;
     PNG in("in_05.png");
 

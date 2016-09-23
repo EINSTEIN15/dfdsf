@@ -14,10 +14,14 @@
  * Destroys the current List. This function should ensure that
  * memory does not leak on destruction of a list.
  */
+
+#include <iostream>
+using namespace std;
+
 template <class T>
 List<T>::~List()
 {
-    /// @todo Graded in MP3.1
+  clear();
 }
 
 /**
@@ -27,7 +31,16 @@ List<T>::~List()
 template <class T>
 void List<T>::clear()
 {
-    /// @todo Graded in MP3.1
+  ListNode *currentnode= this->head;
+  while (currentnode!=NULL)
+    {
+      ListNode *nextnode= currentnode->next;
+      delete currentnode;
+      currentnode=nextnode;
+
+    }
+
+
 }
 
 /**
@@ -39,7 +52,26 @@ void List<T>::clear()
 template <class T>
 void List<T>::insertFront(T const& ndata)
 {
-    /// @todo Graded in MP3.1
+  ListNode *newnode= new ListNode(ndata);
+  if(head!=NULL)
+    { 
+      newnode->next=head;
+      head->prev=newnode;
+      head=newnode;
+      length++;
+    }
+  else
+    {
+      head=newnode;
+      
+      tail=head;
+      length++;
+
+
+    }
+  newnode=NULL;
+  delete newnode;
+    
 }
 
 /**
@@ -51,7 +83,23 @@ void List<T>::insertFront(T const& ndata)
 template <class T>
 void List<T>::insertBack(const T& ndata)
 {
-    /// @todo Graded in MP3.1
+  ListNode *anothernewnode= new ListNode (ndata);
+  if(tail!=NULL)
+    {       
+      anothernewnode->prev=tail;
+      tail->next=anothernewnode;
+      tail=anothernewnode;
+      anothernewnode=NULL;
+      length++;
+    }
+  else
+    { 
+      head=anothernewnode;
+      tail=anothernewnode;
+      length++;
+    }
+  anothernewnode=NULL;
+  //delete anothernewnode;
 }
 
 /**
@@ -75,10 +123,99 @@ void List<T>::reverse()
  *  be reversed.
  */
 template <class T>
-void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint)
+void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
 {
-    /// @todo Graded in MP3.1
+  // startPoint=head;
+  //endPoint=tail;
+   ListNode * current=startPoint;
+  ListNode * spot =NULL;
+   ListNode * tmp5=NULL;
+   ListNode *tmp=endPoint;
+   ListNode *tmp2=startPoint;
+   ListNode *tmp3=endPoint->next;
+   ListNode *tmp4=startPoint->prev;
+   
+   if (tmp2==NULL)
+     {
+       return;
+     }
+
+   /*      if(endPoint->next!=NULL || startPoint->prev!=NULL)
+     {
+       tmp5       = tmp3->prev;
+       tmp2->prev = tmp->next;
+       tmp3->prev = tmp4->next;
+       tmp4->next = tmp5;
+       tmp->prev  = tmp2->next;
+     }
+   */if(startPoint->prev==NULL && endPoint->next==NULL)
+     {
+	 while(current!=tmp3)
+	   {
+	     spot = current->prev;
+	     current->prev = current->next;
+	     current->next = spot;              
+	    current = current->prev;
+       
+
+           }
+	 	 if(spot!=NULL)
+	  {startPoint=spot->prev;}
+     }
+   
+   else 
+     {
+
+       while(current!=tmp3)
+	 {
+	   spot = current->prev;
+	   current->prev = current->next;
+	   current->next = spot;
+	   current = current->prev;
+
+	 }
+       if(endPoint->next->next!=NULL)
+	 {
+       tmp5       = tmp3->prev;
+       tmp2->prev = tmp->next;
+       tmp3->prev = tmp4->next;
+       tmp4->next = tmp5;
+       tmp->prev  = tmp2->next;
+
+	 }
+
+
+
+
+     }
+
+
+
+
+
+
+/*		  if(endPoint->next!=NULL || startPoint->prev!=NULL)
+	   {
+	     tmp5=tmp3->prev;
+	     tmp2->prev =tmp->next;
+	     tmp3->prev =tmp4->next;
+	     tmp4->next = tmp5;
+	     tmp->prev  = tmp2->next;
+	   }
+		 */
+
+ current=NULL;
+ tmp4=NULL;
+ tmp3=NULL;
+ tmp2=NULL;
+ tmp=NULL;
+ tmp5=NULL;
 }
+
+
+ 
+ 
+ 
 
 /**
  * Reverses blocks of size n in the current List. You should use your
@@ -89,8 +226,45 @@ void List<T>::reverse(ListNode*& startPoint, ListNode*& endPoint)
 template <class T>
 void List<T>::reverseNth(int n)
 {
-    /// @todo Graded in MP3.1
-}
+   ListNode *endpoint=head;
+   ListNode *holder=NULL;
+   ListNode *holder2=NULL;
+   ListNode *startpoint=head;
+   int i=0;
+   
+   //   cout<<"here"<<endl;
+   while(endpoint->next!=NULL && i<n-1)
+     { 
+       endpoint=endpoint->next;
+       i++;
+
+     }
+   
+   reverse(startpoint,endpoint);
+   //   cout<<"here"<<endl; 
+   
+   
+      while(startpoint->next!=NULL)
+     {
+       holder=startpoint;
+       cout<<"here"<<endl;
+       holder2=holder;
+       for(int x=0;holder->next!=NULL && x<n-1; x++)
+	 { holder=holder->next;
+	   endpoint=holder->next;
+	 }
+       cout<<"now"<<endl;
+       reverse(holder2,endpoint);
+       cout<<"What about"<<endl;
+       startpoint=holder2->next;
+
+       }
+   
+   endpoint=NULL;
+   startpoint=NULL;
+   }
+    
+
 
 /**
  * Modifies the List using the waterfall algorithm.
@@ -103,8 +277,41 @@ void List<T>::reverseNth(int n)
  */
 template <class T>
 void List<T>::waterfall()
-{
-    /// @todo Graded in MP3.1
+{ ListNode *curr=head;
+  ListNode *tmp=NULL;
+  ListNode *tmp2=tail;
+  ListNode *tmp3=NULL;
+  ListNode *current=head;
+  if(head==NULL)
+    {
+      return;
+    }
+  while( curr->next!=tail || curr->next!=NULL)
+    { 
+      tmp3=curr;
+      tmp3=curr->next;
+      tmp2->next=tmp3;
+      tmp3->prev=tmp2;
+      tmp2=tmp3;
+      curr=curr->next;
+      cout<<curr->data<<" ";
+      
+      /*   anothernewnode->prev=tail;
+      tail->next=anothernewnode;
+      tail=anothernewnode*/
+ 
+       
+       
+     
+      
+
+     
+    }
+  curr=NULL;
+  tmp=NULL;
+  current=NULL;
+  tmp2=NULL;
+  tmp3=NULL;
 }
 
 /**
