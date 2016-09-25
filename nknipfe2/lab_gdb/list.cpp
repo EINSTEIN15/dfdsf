@@ -17,6 +17,8 @@
  * Destroys the current List. This function should ensure that
  * memory does not leak on destruction of a list.
  */
+#include "list.h"
+#include <iostream>
 template <class T>
 List<T>::~List()
 {
@@ -32,6 +34,20 @@ void List<T>::clear()
 {
     // @todo Graded in lab_gdb
     // Write this function based on mp3
+ListNode *currentnode= this->head;
+  while (currentnode!=NULL)
+    {
+      ListNode *nextnode= currentnode->next;
+      delete currentnode;
+      currentnode=nextnode;
+
+    }
+
+
+
+
+
+
 }
 
 /**
@@ -45,6 +61,25 @@ void List<T>::insertFront(T const& ndata)
 {
     // @todo Graded in lab_gdb
     // Write this function based on mp3
+ ListNode *newnode= new ListNode(ndata);
+  if(head!=NULL)
+    { 
+      newnode->next=head;
+      // head->prev=newnode;
+      head=newnode;
+      length++;
+    }
+  else
+    {
+      head=newnode;
+      length++;
+
+
+    }
+  newnode=NULL;
+  delete newnode;
+
+
 }
 
 /**
@@ -62,11 +97,15 @@ void List<T>::insertBack(const T& ndata)
 
     if (temp == NULL) {
         head = new ListNode(ndata);
-    } else {
-        while (temp->next != NULL)
+	length++;
+    } 
+    else {
+      while (temp->next != NULL)
+	{
             temp = temp->next;
-        temp = new ListNode(ndata);
-        length++;
+	}
+      temp->next= new ListNode(ndata);
+      length++;
     }
 }
 
@@ -94,14 +133,21 @@ typename List<T>::ListNode* List<T>::reverse(ListNode* curr, ListNode* prev,
 {
     // @todo Graded in lab_gdb
     ListNode* temp;
-    if (len <= 0) {
-        curr->next = prev;
+    if(head==NULL)
+      {
+	return NULL;
+      }
+    if (len <= 1) {
+      curr->next = prev;
         return curr;
     } else {
-        temp = reverse(curr->next, curr, len - 1);
+        temp = reverse(curr->next, curr, len-1);
         curr->next = prev;
         return temp;
     }
+    temp=NULL;
+    curr=NULL;
+    prev=NULL;
 }
 
 /**
@@ -121,19 +167,54 @@ void List<T>::shuffle()
     // one should point at the start of the first half-list
     // two should point at the start of the second half-list
     ListNode *one, *two, *prev, *temp;
-    one = two = prev = temp = head;
+      one =head;
+      two =head;
+      prev =head;
+     temp = head;
+     ListNode *temp2;
+     if(head==NULL)
+       {
+	 return;
 
+
+       }
+     if(length%2==0){
     for (int i = 0; i < length / 2; i++) {
-        prev = two;
+        prev=two;
         two = two->next;
+	
     }
+     }
+    else
+      {
+	for (int i = 0; i < (length+1) / 2; i++) {
+	  prev=two;
+	  two = two->next;
+
+
+
+      }
+      }
+    
+    //    ListNode*tmp2;
+    
+    
     prev->next = NULL;
 
     // interleave
-    while (two != NULL) {
+    while (two!= NULL) {
         temp = one->next;
+	
         one->next = two;
         two = two->next;
-        one->next->next = temp;
+        one->next->next=temp;
+	one=temp;
+	
     }
+    one=NULL;
+    two=NULL;
+    prev=NULL;
+    temp=NULL;
+
+
 }
