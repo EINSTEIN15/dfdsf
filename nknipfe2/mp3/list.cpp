@@ -174,15 +174,15 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
 	   current = current->prev;
 
 	 }
-       if(endPoint->next->next!=NULL)
-	 {
+       
+	 
        tmp5       = tmp3->prev;
        tmp2->prev = tmp->next;
        tmp3->prev = tmp4->next;
        tmp4->next = tmp5;
        tmp->prev  = tmp2->next;
 
-	 }
+	 
 
 
 
@@ -254,7 +254,7 @@ void List<T>::reverseNth(int n)
 	   endpoint=holder->next;
 	 }
        cout<<"now"<<endl;
-       reverse(holder2,endpoint);
+       //       reverse(holder2,endpoint);
        cout<<"What about"<<endl;
        startpoint=holder2->next;
 
@@ -277,41 +277,53 @@ void List<T>::reverseNth(int n)
  */
 template <class T>
 void List<T>::waterfall()
-{ ListNode *curr=head;
-  ListNode *tmp=NULL;
-  ListNode *tmp2=tail;
+{
+  ListNode *tmp=head;
+  ListNode *tmp2=head;
   ListNode *tmp3=NULL;
-  ListNode *current=head;
-  if(head==NULL)
+  // ListNode *tmp2=tail;
+  //ListNode *tmp3=NULL;
+  //ListNode *current=head;
+  if(head==tail)
     {
       return;
     }
-  while( curr->next!=tail || curr->next!=NULL)
-    { 
-      tmp3=curr;
-      tmp3=curr->next;
-      tmp2->next=tmp3;
-      tmp3->prev=tmp2;
-      tmp2=tmp3;
-      curr=curr->next;
-      cout<<curr->data<<" ";
-      
-      /*   anothernewnode->prev=tail;
-      tail->next=anothernewnode;
-      tail=anothernewnode*/
- 
+  if(head==NULL && tail==NULL)
+    {
+      return;
+    }
+
+    while(tmp!=NULL && tmp->next!=tail)
+      {
+       tmp2=tmp;
+       tmp =tmp->next;
+       tmp3=tmp->next;
+       tmp2->next=tmp->next;
+       tmp3->prev=tmp2;
        
+        tail->next=tmp;
+        tmp->prev=tail;
+       tmp->next=NULL;
+       tail=tmp;
        
-     
+
+       tmp=tmp2->next;
+
+
       
 
-     
-    }
-  curr=NULL;
+
+      }
+       /*   anothernewnode->prev=tail;
+      tail->next=anothernewnode;
+      tail=anothernewnode*/
+    
+  //  curr=NULL;
   tmp=NULL;
-  current=NULL;
   tmp2=NULL;
-  tmp3=NULL;
+  //current=NULL;
+  //tmp2=NULL;
+  //tmp3=NULL;
 }
 
 /**
@@ -324,11 +336,11 @@ template <class T>
 List<T> List<T>::split(int splitPoint)
 {
     if (splitPoint > length)
-        return List<T>();
+      return List<T>();
 
     if (splitPoint < 0)
         splitPoint = 0;
-
+    
     ListNode* secondHead = split(head, splitPoint);
 
     int oldLength = length;
@@ -374,7 +386,19 @@ template <class T>
 typename List<T>::ListNode* List<T>::split(ListNode* start, int splitPoint)
 {
     /// @todo Graded in MP3.2
-    return NULL; // change me!
+  ListNode * start2=start;
+  int i=0;
+  
+  while(i<splitPoint)
+    {
+      start2=start2->next;
+      i++;
+    }
+  start2->prev->next=NULL;
+  start2->prev=NULL;
+  
+return start2; // change me!
+
 }
 
 /**
@@ -416,8 +440,28 @@ void List<T>::mergeWith(List<T>& otherList)
 template <class T>
 typename List<T>::ListNode* List<T>::merge(ListNode* first, ListNode* second)
 {
+  ListNode * tmp=NULL;
+  ListNode *tmp2=NULL;
+  ListNode *tmp3=first;
     /// @todo Graded in MP3.2
-    return NULL; // change me!
+  while(first!=NULL)
+    {
+        tmp=first;
+	first=first->next;
+
+    }
+  tmp2=first;
+  second=tmp2->next;
+  tmp2=second->prev;
+
+  sort();
+
+  return head;
+
+
+
+
+ // change me!
 }
 
 /**
@@ -445,7 +489,45 @@ void List<T>::sort()
  */
 template <class T>
 typename List<T>::ListNode* List<T>::mergesort(ListNode* start, int chainLength)
-{
+{    ListNode *tmp=start;
+  ListNode*tmp2=start->next;
+  ListNode *tmp3=NULL;
+  int i=0;
     /// @todo Graded in MP3.2
+    while(i<chainLength)
+      {
+	if(tmp->data<tmp->next->data)
+	  { 
+	    
+	    tmp2->prev=tmp->prev;
+	    tmp->prev=tmp->next;
+	    tmp->next=tmp2->next;
+	    tmp2->next=tmp;
+	    tmp=tmp->next;
+	  }
+	
+
+
+
+
+
+
+
+	i++;
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return NULL; // change me!
 }
