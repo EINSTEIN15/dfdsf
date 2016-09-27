@@ -1,8 +1,8 @@
-Grading r20070 by enx-cs225autograder committed on Sun Sep 25 02:57:28 CDT 2016
+Grading r20957 by enx-cs225autograder committed on Mon Sep 26 03:29:12 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-26 02:02:13
+Testing mp3 at 2016-09-27 01:33:48
 
-"You know what they say... Pythagoras's Theorem doesn't take into account road construction." ~ Tom Bogue
+"C makes it easy to shoot yourself in the foot. C++ makes it harder, but when you do, you blow away your whole leg!" ~ Bjarne Stroustrup
 
 Setting up test environment...
 Compiling...
