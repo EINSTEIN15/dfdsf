@@ -1,8 +1,8 @@
-Grading r20957 by enx-cs225autograder committed on Mon Sep 26 03:29:12 CDT 2016
+Grading r21331 by enx-cs225autograder committed on Tue Sep 27 03:10:18 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-27 01:33:48
+Testing mp3 at 2016-09-28 01:21:22
 
-"C makes it easy to shoot yourself in the foot. C++ makes it harder, but when you do, you blow away your whole leg!" ~ Bjarne Stroustrup
+"Television won't be able to hold on to any market it captures after the first six months. People will soon get tired of staring at a plywood box every night." ~ Darryl Zanuck, 20th Century Fox, 1946
 
 Setting up test environment...
 Compiling...
