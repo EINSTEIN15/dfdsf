@@ -135,7 +135,7 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
    ListNode *tmp3=endPoint->next;
    ListNode *tmp4=startPoint->prev;
    
-   if (tmp2==NULL)
+   if (head==NULL)
      {
        return;
      }
@@ -442,21 +442,125 @@ typename List<T>::ListNode* List<T>::merge(ListNode* first, ListNode* second)
 {
   ListNode * tmp=NULL;
   ListNode *tmp2=NULL;
-  ListNode *tmp3=first;
+  //ListNode *tmp3=first;
+  ListNode *tmp1=first;
+  // ListNode *tmp12=first->next
+    ListNode *tmp5=second;
+    // ListNode *tmp6=second->next;
+    ListNode *newlist;
     /// @todo Graded in MP3.2
-  while(first!=NULL)
+  /* while(first->next!=NULL)
     {
         tmp=first;
 	first=first->next;
 
     }
   tmp2=first;
-  second=tmp2->next;
+  tmp2->next=second;
   tmp2=second->prev;
-
-  sort();
-
   return head;
+
+  */
+
+    
+    ListNode *lastattached;
+    if(first->data<second->data)
+      {
+	newlist=tmp1;
+	tmp1=tmp1->next;
+	head=tmp1;
+	
+      }
+    else
+      {
+	newlist=tmp5;
+	tmp5=tmp5->next;
+	head=tmp5;
+       
+      }
+    
+  
+while(tmp1!=NULL && tmp5!=NULL)
+      {
+	if((tmp1->data)<(tmp5->data))
+	  { 
+	    newlist->next=tmp1;
+	    lastattached=newlist->next;
+	    lastattached->prev=newlist;
+	    tmp1=tmp1->next;
+	    newlist=newlist->next;
+	    
+	   
+	    
+	    
+	  }
+	else
+	  { 
+	    
+	    newlist->next=tmp5;
+	    lastattached=newlist->next;
+	    lastattached->prev=newlist;
+	    tmp5=tmp5->next;
+	    newlist=newlist->next;
+	    
+	    
+	  }
+       
+      }
+
+ if(tmp1!=NULL)
+   {
+     newlist->next=tmp1;
+     tmp1->prev=newlist;
+     
+   }
+ if(tmp5!=NULL)
+   {
+     newlist->next=tmp5;
+     tmp5->prev=newlist;
+   }
+ if(first->data<second->data)
+   {
+     return first;
+   }
+ else
+   {
+     return second;
+   }
+ delete tmp5;
+/*
+      ListNode *tmp5;//=start2;
+	ListNode *tmp6;//=start2->next;
+     
+	while((tmp5->data)<(tmp5->next->data) && tmp5->next!=NULL)
+      {
+	
+	   
+	    
+	    tmp6->prev=tmp5->prev;
+	    tmp5->prev=tmp5->next;
+	    tmp5->next=tmp6->next;
+	    tmp6->next=tmp5;
+	    tmp5=tmp5->next;
+	  
+	    if(
+ 
+      }
+      
+ 
+
+  while(first->next!=NULL)
+    {
+        tmp=first;
+	first=first->next;
+
+    }
+  tmp2=first;
+  tmp2->next=second;
+  tmp2=second->prev;
+*/
+
+  
 
 
 
@@ -489,45 +593,18 @@ void List<T>::sort()
  */
 template <class T>
 typename List<T>::ListNode* List<T>::mergesort(ListNode* start, int chainLength)
-{    ListNode *tmp=start;
-  ListNode*tmp2=start->next;
-  ListNode *tmp3=NULL;
-  int i=0;
-    /// @todo Graded in MP3.2
-    while(i<chainLength)
-      {
-	if(tmp->data<tmp->next->data)
-	  { 
-	    
-	    tmp2->prev=tmp->prev;
-	    tmp->prev=tmp->next;
-	    tmp->next=tmp2->next;
-	    tmp2->next=tmp;
-	    tmp=tmp->next;
-	  }
-	
+{    ListNode *start1;
+  ListNode *start2;
+  if(chainLength==1)
+    { 
+      return start;
+    }
+  start1=start;
+  start2=split(start,chainLength/2);
+  start1=mergesort(start,chainLength/2);
+  start2=mergesort(start2,chainLength-chainLength/2);
+  
+   return merge(start1,start2); // change me!
+ }
 
 
-
-
-
-
-
-	i++;
-      }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return NULL; // change me!
-}
