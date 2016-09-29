@@ -1,8 +1,8 @@
-Grading r21331 by enx-cs225autograder committed on Tue Sep 27 03:10:18 CDT 2016
+Grading r21808 by enx-cs225autograder committed on Wed Sep 28 02:32:41 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-28 01:21:22
+Testing mp3 at 2016-09-29 01:32:04
 
-"Television won't be able to hold on to any market it captures after the first six months. People will soon get tired of staring at a plywood box every night." ~ Darryl Zanuck, 20th Century Fox, 1946
+"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
 
 Setting up test environment...
 Compiling...
