@@ -1,8 +1,8 @@
-Grading r21808 by enx-cs225autograder committed on Wed Sep 28 02:32:41 CDT 2016
+Grading r22890 by nknipfe2 committed on Thu Sep 29 16:39:38 CDT 2016
 Monad Autograder
-Testing mp3 at 2016-09-29 01:32:04
+Testing mp3 at 2016-09-30 01:39:47
 
-"Optimism is an occupational hazard of programming; feedback is the treatment." ~ Kent Beck
+"There are 10 types of people in the world. Those who understand binary, those who don't, and those who didn't expect this joke to be in base 3." ~ Anonymous
 
 Setting up test environment...
 Compiling...
@@ -50,28 +50,28 @@ testSplit5_split_size  . . . . . [1 pts]  - passed
 testSplit5_split_forward . . . . [1 pts]  - passed
 testSplit5_split_backward  . . . [1 pts]  - passed
 testSplit5_mem (asan)  . . . . . [3 pts]  - passed
-testMerge_size . . . . . . . . . [1 pts]  - FAILED
-testMerge_forward  . . . . . . . [1 pts]  - FAILED
-testMerge_backward . . . . . . . [1 pts]  - FAILED
-testMerge_mem (asan) . . . . . . [3 pts]  - FAILED
-testSort16p_s  . . . . . . . . . [1 pts]  - FAILED
-testSort16p_f  . . . . . . . . . [2 pts]  - FAILED
-testSort16p_b  . . . . . . . . . [2 pts]  - FAILED
-testSort20p_s  . . . . . . . . . [1 pts]  - FAILED
-testSort20p_f  . . . . . . . . . [2 pts]  - FAILED
-testSort20p_b  . . . . . . . . . [2 pts]  - FAILED
-testSort27p_s  . . . . . . . . . [1 pts]  - FAILED
-testSort27p_f  . . . . . . . . . [2 pts]  - FAILED
-testSort27p_b  . . . . . . . . . [2 pts]  - FAILED
-testSortEmpty  . . . . . . . . . [5 pts]  - FAILED
-testSort259p_s . . . . . . . . . [1 pts]  - FAILED
-testSort259p_f . . . . . . . . . [2 pts]  - FAILED
-testSort259p_b . . . . . . . . . [2 pts]  - FAILED
-testSortMemLeak (asan) . . . . . [5 pts]  - FAILED
-testSortNlogN  . . . . . . . . . [10 pts] - FAILED
+testMerge_size . . . . . . . . . [1 pts]  - passed
+testMerge_forward  . . . . . . . [1 pts]  - passed
+testMerge_backward . . . . . . . [1 pts]  - passed
+testMerge_mem (asan) . . . . . . [3 pts]  - passed
+testSort16p_s  . . . . . . . . . [1 pts]  - passed
+testSort16p_f  . . . . . . . . . [2 pts]  - passed
+testSort16p_b  . . . . . . . . . [2 pts]  - passed
+testSort20p_s  . . . . . . . . . [1 pts]  - passed
+testSort20p_f  . . . . . . . . . [2 pts]  - passed
+testSort20p_b  . . . . . . . . . [2 pts]  - passed
+testSort27p_s  . . . . . . . . . [1 pts]  - passed
+testSort27p_f  . . . . . . . . . [2 pts]  - passed
+testSort27p_b  . . . . . . . . . [2 pts]  - passed
+testSortEmpty  . . . . . . . . . [5 pts]  - passed
+testSort259p_s . . . . . . . . . [1 pts]  - passed
+testSort259p_f . . . . . . . . . [2 pts]  - passed
+testSort259p_b . . . . . . . . . [2 pts]  - passed
+testSortMemLeak (asan) . . . . . [5 pts]  - passed
+testSortNlogN  . . . . . . . . . [10 pts] - passed
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 41
+TOTAL SCORE: 87
 
