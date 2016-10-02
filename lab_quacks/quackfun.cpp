@@ -24,9 +24,21 @@ namespace QuackFun {
  */
 template <typename T>
 T sum(stack<T>& s)
-{
+{T x;
+  T y;
+  T z;
     // Your code here
-    return T(); // stub return value (0 for primitive types). Change this!
+  if(s.empty())
+    {
+      return 0;
+    }
+  
+  x=s.top();
+ s.pop();
+ y= sum(s);
+ s.push(x); 
+  
+  return x+y; // stub return value (0 for primitive types). Change this!
                 // Note: T() is the default value for objects, and 0 for
                 // primitive types
 }
@@ -45,11 +57,39 @@ T sum(stack<T>& s)
  */
 template <typename T>
 void scramble(queue<T>& q)
-{
+{   size_t counter=1;
+    size_t x=0;
     stack<T> s;
-    // optional: queue<T> q2;
+    queue <T> q2;
+    T data;
+    T data2;
+  if(q.empty())
+    {
+      return ;
+    }
+  else
+    {
+      if(counter%2==0)
+	{
 
-    // Your code here
+
+
+
+	}
+      else
+	{
+	  while(x<counter)
+	    {  
+	      data=q.front();
+	      
+
+
+	    }
+
+	}
+     
+    }
+  return ;   
 }
 
 /**
