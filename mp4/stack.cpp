@@ -20,9 +20,9 @@
 template<class T>
 void Stack<T>::push(T const & newItem)
 {
-    /**
-     * @todo Your code here!
-     */
+  myStack.push_front(newItem);
+     
+    
 }
 
 /**
@@ -37,10 +37,10 @@ void Stack<T>::push(T const & newItem)
 template <class T>
 T Stack<T>::pop()
 {
-    /**
-     * @todo Your code here! You will have to replace the following line.
-     */
-    return T();
+  T data;
+  data=myStack.front();
+  myStack.pop_front();
+  return data;
 }
 
 /**
@@ -51,10 +51,7 @@ T Stack<T>::pop()
 template <class T>
 void Stack<T>::add(const T& theItem)
 {
-    /**
-     * @todo Your code here! Hint: this should call another Stack function
-     *  to add the element to the Stack.
-     */
+    this->push(theItem);
 }
 
 /**
@@ -65,12 +62,7 @@ void Stack<T>::add(const T& theItem)
 template <class T>
 T Stack<T>::remove()
 {
-    /**
-     * @todo Your code here! Hint: this should call another Stack function
-     *  to remove an element from the Stack and return it. You will need to
-     *  replace the following line.
-     */
-    return T();
+ return  this->pop();
 }
 
 /**
@@ -86,10 +78,9 @@ T Stack<T>::remove()
 template <class T>
 T Stack<T>::peek()
 {
-    /**
-     * @todo Your code here! You will need to replace the following line.
-     */
-    return T();
+  T data;
+  data=myStack.front();
+    return data;
 }
 
 /**
@@ -98,6 +89,11 @@ T Stack<T>::peek()
  * @note This function must be O(1)! Note that the std::list's size()
  *	function is O(n), so you should not attempt to use it here.
  *
+
+
+
+
+
  * @return Whether or not the stack is empty (bool).
  */
 template <class T>
@@ -106,5 +102,14 @@ bool Stack<T>::isEmpty() const
     /**
      * @todo Your code here! You will need to replace the following line.
      */
+  if(myStack.empty())
+    {
     return true;
+    }
+  else
+    {
+      return false;
+    }
+
+
 }
