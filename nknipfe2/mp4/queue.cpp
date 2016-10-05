@@ -13,10 +13,12 @@
  */
 template <class T>
 void Queue<T>::enqueue(T const& newItem)
-{
-    /**
-     * @todo Your code here!
-     */
+{// T data;
+  // outStack.add(newItem);
+  // data=outStack.pop();
+  inStack.add(newItem);
+
+
 }
 
 /**
@@ -28,10 +30,11 @@ void Queue<T>::enqueue(T const& newItem)
 template <class T>
 T Queue<T>::dequeue()
 {
-    /**
-     * @todo Your code here! You will need to replace the following line.
-     */
-    return T();
+  T data;
+  data=outStack.peek();
+  outStack.remove();
+  return data;
+
 }
 
 /**
@@ -42,10 +45,9 @@ T Queue<T>::dequeue()
 template <class T>
 void Queue<T>::add(const T& theItem)
 {
-    /**
-     * @todo Your code here! Hint: this function should call a Queue
-     *  function to add the element to the Queue.
-     */
+  this->enqueue(theItem);
+
+
 }
 
 /**
@@ -56,27 +58,23 @@ void Queue<T>::add(const T& theItem)
 template <class T>
 T Queue<T>::remove()
 {
-    /**
-     * @todo Your code here! Hint: this function should call a Queue
-     *  function to remove an element from the Queue and return it. You will
-     *  need to replace the following line.
-     */
-    return T();
+  return this->dequeue();
+  
 }
 
-/**
- * Finds the object at the front of the Queue, and returns it to the
- * caller. Unlike pop(), this operation does not alter the queue.
- *
- * @return The item at the front of the queue.
- */
+
 template <class T>
 T Queue<T>::peek()
-{
-    /**
-     * @todo Your code here! You will need to replace the following line.
-     */
-    return T();
+{T data;
+  T data2;
+  while(!inStack.isEmpty())
+    {
+      data=inStack.remove();
+      outStack.add(data);
+    }
+  data=outStack.peek();
+  return data;
+    
 }
 
 /**
@@ -87,8 +85,15 @@ T Queue<T>::peek()
 template <class T>
 bool Queue<T>::isEmpty() const
 {
-    /**
-     * @todo Your code here! You will need to replace the following line.
-     */
-    return true;
+  
+  if(inStack.isEmpty() && outStack.isEmpty())
+    {
+      return true;
+    }
+  else
+    {
+
+      return false;
+
+    }
 }
