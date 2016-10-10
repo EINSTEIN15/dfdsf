@@ -12,7 +12,7 @@
 #include <vector>
 #include <sstream>
 #include "random.h"
-
+#include <vector>
 using namespace std;
 
 /**
@@ -156,7 +156,12 @@ class BinaryTree
      * @param subRoot The current node in the recursion
      */
     void printLeftToRight(const Node* subRoot) const;
+    
+    void mirror(Node* subRoot);
 
+    bool isOrdered( Node *subRoot, vector<T> &myvector) const;
+
+    void printPathshelp( const Node* subRoot, vector<T> thevector,int i) const;
 
     /**
      * Private helper function for the public insert function.

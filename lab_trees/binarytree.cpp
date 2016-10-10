@@ -76,9 +76,26 @@ void BinaryTree<T>::printLeftToRight(const Node* subRoot) const
 template <typename T>
 void BinaryTree<T>::mirror()
 {
-    // your code here
-}
+  
+  mirror(root);
 
+}
+template <typename T>
+  void BinaryTree<T>::mirror( Node* subRoot)
+{
+  if(subRoot==NULL)
+    {
+      return;
+    }
+   Node *holder;
+   holder=subRoot->left;
+   subRoot->left=subRoot->right;
+   subRoot->right=holder;
+   mirror(subRoot->left);
+   mirror(subRoot->right);
+
+
+}
 
 /**
  * @return True if an in-order traversal of the tree would produce a
@@ -87,10 +104,58 @@ void BinaryTree<T>::mirror()
  */
 template <typename T>
 bool BinaryTree<T>::isOrdered() const
-{
-    // your code here
-    return false;
+{  vector <T> myvector;
+  return isOrdered(root,myvector);
 }
+template <typename T>
+bool BinaryTree<T>::isOrdered( Node *subRoot,vector <T> &myvector )const 
+{ 
+  T data;
+  T data2;
+  
+  if(subRoot==NULL)
+    {
+      return true;
+
+    }
+  /* //nullcheck
+  if(subRoot->elem<subRoot->left->elem)
+    {
+      
+
+    }
+  //nullcheck
+  bool leftisordered=isOrdered(subRoot->left);
+    bool rightisordered=isOrdered(subRoot->right);
+  */
+
+
+
+    isOrdered(subRoot->left,myvector);
+  myvector.push_back(subRoot->elem);
+  isOrdered(subRoot->right,myvector);
+  if(subRoot==root)
+    {
+      unsigned long int i=0;
+	while(i<myvector.size()-1)
+	  {
+	    data=myvector[i];
+	    data2=myvector[i+1];
+	    i++;
+	 
+	    if(data>data2)
+	      {
+		return false;
+	      }
+	  
+
+	  }
+       
+    }
+  return true;
+}
+
+
 
 
 /**
@@ -102,8 +167,57 @@ bool BinaryTree<T>::isOrdered() const
 template <typename T>
 void BinaryTree<T>::printPaths() const
 {
-    // your code here
+  vector <T> thevector;
+  printPathshelp(root,thevector,0);
+
 }
+
+
+
+
+template <typename T>
+void BinaryTree<T>::printPathshelp( const Node* subRoot,vector <T> thevector,int i) const
+{
+  
+ 
+  //unsigned long int x=0;
+  if(subRoot==NULL)
+    {
+
+      return;
+    }
+  thevector.push_back(subRoot->elem);
+  i++;
+  //if node is a leaf node print the path 
+  if(subRoot->left==NULL && subRoot->right==NULL)
+    { 
+      int x=0;
+      cout << "Path:";
+      while(x<i)
+	{
+	  T data;
+	  data=thevector[x];
+	  cout <<" " <<data;
+	  x++;
+	
+	 
+	}
+      cout<<endl;    
+      while(!thevector.empty())
+	{
+	  thevector.pop_back();
+	}
+
+
+    }
+ else
+    {
+      printPathshelp(subRoot->left,thevector,i);
+      printPathshelp(subRoot->right,thevector,i);
+    }
+}
+
+
 
 
 /**
