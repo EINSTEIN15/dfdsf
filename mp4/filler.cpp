@@ -15,7 +15,11 @@ animation filler::dfs::fillSolid(PNG& img, int x, int y, RGBAPixel fillColor,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+
+  solidColorPicker tmp(fillColor);
+
+  
+  return filler:: fill <Stack>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::dfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor,
@@ -25,7 +29,9 @@ animation filler::dfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+
+  gridColorPicker tmp(gridColor,gridSpacing);
+  return filler::fill<Stack>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::dfs::fillGradient(PNG& img, int x, int y,
@@ -36,7 +42,13 @@ animation filler::dfs::fillGradient(PNG& img, int x, int y,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+
+
+
+
+  gradientColorPicker tmp(fadeColor1,fadeColor2,radius,x,y);
+
+  return filler::fill <Stack>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::dfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
@@ -47,7 +59,7 @@ animation filler::dfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
      * correct call to filler::fill with the correct template parameter
      * indicating the ordering structure to be used in the fill.
      */
-    return animation();
+  return filler::fill<Stack>(img,x,y,fillColor,tolerance,frameFreq);
 }
 
 animation filler::bfs::fillSolid(PNG& img, int x, int y, RGBAPixel fillColor,
@@ -57,7 +69,8 @@ animation filler::bfs::fillSolid(PNG& img, int x, int y, RGBAPixel fillColor,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+  solidColorPicker tmp(fillColor);
+  return filler::fill<Queue>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::bfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor,
@@ -67,7 +80,12 @@ animation filler::bfs::fillGrid(PNG& img, int x, int y, RGBAPixel gridColor,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+
+  gridColorPicker tmp(gridColor,gridSpacing);
+
+
+
+  return filler::fill<Queue>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::bfs::fillGradient(PNG& img, int x, int y,
@@ -78,7 +96,9 @@ animation filler::bfs::fillGradient(PNG& img, int x, int y,
      * @todo Your code here! You should replace the following line with a
      * correct call to fill with the correct colorPicker parameter.
      */
-    return animation();
+
+  gradientColorPicker tmp(fadeColor1,fadeColor2,radius,x,y);
+  return filler::fill<Queue>(img,x,y,tmp,tolerance,frameFreq);
 }
 
 animation filler::bfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
@@ -89,7 +109,7 @@ animation filler::bfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
      * correct call to filler::fill with the correct template parameter
      * indicating the ordering structure to be used in the fill.
      */
-    return animation();
+  return filler::fill<Queue>(img,x,y,fillColor,tolerance,frameFreq);
 }
 
 template <template <class T> class OrderingStructure>
@@ -150,5 +170,49 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor,
      *        have been checked. So if frameFreq is set to 1, a pixel should
      *        be filled every frame.
      */
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return animation();
 }
