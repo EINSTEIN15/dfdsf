@@ -102,7 +102,7 @@ bool Stack<T>::isEmpty() const
     /**
      * @todo Your code here! You will need to replace the following line.
      */
-  if(myStack.empty())
+  if(myStack.size()==0)
     {
     return true;
     }

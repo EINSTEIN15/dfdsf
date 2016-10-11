@@ -31,6 +31,15 @@ template <class T>
 T Queue<T>::dequeue()
 {
   T data;
+  if(outStack.isEmpty())
+    {
+      while(!inStack.isEmpty())
+	{
+      T data2;
+      data2=inStack.remove();
+      outStack.add(data2);
+	}
+	}
   data=outStack.peek();
   outStack.remove();
   return data;
