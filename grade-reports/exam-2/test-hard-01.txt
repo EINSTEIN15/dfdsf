@@ -1,0 +1,39 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam2-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts
+qid is hard-01
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/tests/hard-01/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam2-grading/submissions/nknipfe2/grade-.Omd
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o hard.o hard.cpp
+hard.cpp: In function ‘void alternatingSplit(LinkedList&, LinkedList*, LinkedList*)’:
+hard.cpp:12:9: error: cannot convert ‘LinkedList’ to ‘LinkedList*’ in assignment
+    even=lst;
+         ^~~
+hard.cpp:18:8: error: cannot convert ‘LinkedList’ to ‘LinkedList*’ in assignment
+    odd=lst;
+        ^~~
+hard.cpp:23:14: warning: left operand of comma operator has no effect [-Wunused-value]
+   return odd,even;
+              ^~~~
+hard.cpp:23:14: error: return-statement with a value, in function returning 'void' [-fpermissive]
+<builtin>: recipe for target 'hard.o' failed
+make: *** [hard.o] Error 1
+Could not compile hard.o.
+
+Grade for question : 0/100
+
+
+~ ~ ~
+
+Grade: 0
+
+Details:
+test,grade
+_compiled,0

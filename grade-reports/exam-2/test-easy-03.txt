@@ -1,0 +1,95 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam2-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts
+qid is easy-03
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/tests/easy-03/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam2-grading/submissions/nknipfe2/grade-.5Ag
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o easy.o easy.cpp
+:: Compiled successfully!
+:: Compiling provided code...
+test_empty_result.cpp: In function ‘int test()’:
+test_empty_result.cpp:25:8: warning: unused variable ‘testresult’ [-Wunused-variable]
+   bool testresult = list_A->check(a,0) && list_B->check(b,1);
+        ^~~~~~~~~~
+
+:: Compiling test_first_data.
+:: Running test_first_data.
+Status is 'FAILED'
+:: Failed test_first_data.
+
+:: Compiling test_first_result.
+:: Running test_first_result.
+Status is 'FAILED'
+:: Failed test_first_result.
+
+:: Compiling test_middle_data.
+:: Running test_middle_data.
+Status is 'PASSED'
+:: Passed test_middle_data.
+
+:: Compiling test_middle_result.
+:: Running test_middle_result.
+Status is 'PASSED'
+:: Passed test_middle_result.
+
+:: Compiling test_empty_data.
+:: Running test_empty_data.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/run_tests: line 105:  9445 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      9446 Done                    | head -c 30K
+:: Failed test_empty_data: Exited with non-zero exit status 139.
+
+:: Compiling test_empty_result.
+:: Running test_empty_result.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/run_tests: line 105:  9456 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      9457 Done                    | head -c 30K
+:: Failed test_empty_result: Exited with non-zero exit status 139.
+
+:: Compiling test_oob_data.
+:: Running test_oob_data.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/run_tests: line 105:  9466 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      9467 Done                    | head -c 30K
+:: Failed test_oob_data: Exited with non-zero exit status 139.
+
+:: Compiling test_oob_result.
+:: Running test_oob_result.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam2-grading/code-grading/scripts/run_tests: line 105:  9478 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      9479 Done                    | head -c 30K
+:: Failed test_oob_result: Exited with non-zero exit status 139.
+
+Failed tests:
+- test_first_data
+- test_first_result
+- test_empty_data
+- test_empty_result
+- test_oob_data
+- test_oob_result
+
+Grade for question : 33.33/100
+
+
+~ ~ ~
+
+Grade: 33.33
+
+Details:
+test,grade
+_compiled,1
+_test_first_data,0
+_test_first_result,0
+_test_middle_data,1
+_test_middle_result,1
+_test_empty_data,0
+_test_empty_result,0
+_test_oob_data,0
+_test_oob_result,0
