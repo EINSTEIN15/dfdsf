@@ -1,0 +1,30 @@
+Exam 2 report for Nathan Knipfer
+================================
+
+Scores
+------
+
+  Problem                           Points
+  ------------------------------- --------
+  mc-constructors-fa16-6g           0.0000
+  mc-destructors-fa16-04c           4.0000
+  mc-inheritance-fa16-3c            4.0000
+  mc-linked-lists-tc-fa16-012b      4.0000
+  mc-operator-overload-fa16-04b     0.0000
+  mc-ref-params-fa16-01a            0.0000
+  mc-templates-fa16-06d             4.0000
+  easy-03                           4.6662
+  hard-01                           0.0000
+
+"Easy" code is out of 14 points. "Hard" code is out of 8 points.
+
+Total score: 20.6662/50 (41.3324%)
+
+Code Problem Test Output
+------------------------
+
+See `test-easy-*.txt` and `test-hard-*.txt` for autograder test outputs.
+
+Questions / problems of a specific nature, please email mattox.
+Questions / problems that look like they would have affected a lot of
+people, please post on Piazza.
