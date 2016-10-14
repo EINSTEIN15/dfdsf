@@ -1,8 +1,8 @@
-Grading r30880 by enx-cs225autograder committed on Wed Oct 12 02:22:54 CDT 2016
+Grading r31411 by enx-cs225autograder committed on Thu Oct 13 02:37:19 CDT 2016
 Monad Autograder
-Testing mp4 at 2016-10-13 01:34:39
+Testing mp4 at 2016-10-14 01:25:13
 
-"Measuring programming progress by lines of code is like measuring aircraft building progress by weight." ~ Bill Gates
+"I think I may have made a student cry during my exam..." ~ Joe DiFebo
 
 Setting up test environment...
 Compiling...
