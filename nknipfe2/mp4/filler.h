@@ -25,7 +25,9 @@
  */
 namespace filler
 {
-    /**
+  //  bool processed(int x,int y);  
+
+  /**
      * dfs namespace: specifies a set of filler functions for doing fills
      * on images employing a depth-first-search approach.
      *
