@@ -1,4 +1,4 @@
-/**
+ /**
  * @file filler.cpp
  * Implementation of functions in the filler namespace. Heavily based on
  * old MP4 by CS225 Staff, Fall 2010.
@@ -59,7 +59,9 @@ animation filler::dfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
      * correct call to filler::fill with the correct template parameter
      * indicating the ordering structure to be used in the fill.
      */
-  return filler::fill<Stack>(img,x,y,fillColor,tolerance,frameFreq);
+  animation here;
+  here =filler::fill<Stack>(img,x,y,fillColor,tolerance,frameFreq);
+  return here;
 }
 
 animation filler::bfs::fillSolid(PNG& img, int x, int y, RGBAPixel fillColor,
@@ -109,7 +111,9 @@ animation filler::bfs::fill(PNG& img, int x, int y, colorPicker& fillColor,
      * correct call to filler::fill with the correct template parameter
      * indicating the ordering structure to be used in the fill.
      */
-  return filler::fill<Queue>(img,x,y,fillColor,tolerance,frameFreq);
+  animation here;
+  here= filler::fill<Queue>(img,x,y,fillColor,tolerance,frameFreq);
+  return here;
 }
 
 template <template <class T> class OrderingStructure>
@@ -171,48 +175,104 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor,
      *        be filled every frame.
      */
 
+     
+  OrderingStructure<RGBAPixel *> structure;
+  OrderingStructure<unsigned long int>xc;
+  OrderingStructure<unsigned long int>yc;
+    
   
+  int marked[300][300];
+  //  bool marked[X1][Y1]=false;
+unsigned long  int x1=0;
+unsigned long int y1=0;
+ unsigned long int x2=x;
+ unsigned long int y2=y;
+  int tmp;
+  animation anime;
+  RGBAPixel originalpixel;
+  RGBAPixel *currentpixel;
+  originalpixel=*(img(x,y));
+  int framecount=0;
+  //int g;
+  //int b;
+  //int r;
+  /* tmp=(currentpixel.red-originalpixel.red)*(currentpixel.red-originalpixel.red)+(currentpixel.blue-originalpixel.blue)*(currentpixel.blue-originalpixel.blue)+(currentpixel.green-originalpixel.green)*(currentpixel.green-originalpixel.green);*/
+  // w=img.width();
+  //  cout<<w<<endl;
+  while(x1<img.width()&& y1<img.height())
+    {
+      
+	
+	  marked[x1][y1]=false;
+	  y1++;
+         x1++;
+    }
+
+  structure.add(img(x,y));
+  xc.add(x);
+  yc.add(y);
+  while(!structure.isEmpty())
+    {
+       currentpixel =structure.remove();
+       // currentpixel->red=originalpixel.red;
+       // currentpixel->green=originalpixel.green;
+       //  currentpixel->blue=originalpixel.blue;
+      unsigned long      int xc2=xc.remove();
+      unsigned long      int yc2=yc.remove();
 
 
+      //      cout<<"Here"<<endl;
+      
+tmp=(currentpixel->red-originalpixel.red)*(currentpixel->red-originalpixel.red)+(currentpixel->blue-originalpixel.blue)*(currentpixel->blue-originalpixel.blue)+(currentpixel->green-originalpixel.green)*(currentpixel->green-originalpixel.green);
+ if(!marked[xc2][yc2] && tmp<=tolerance)
+   {
+     //  cout<<"what"<<endl;
+     
+     marked[xc2][yc2]=true;
+     *currentpixel=fillColor(xc2,yc2);
+     if(xc2+1<img.width())
+       {
+	 structure.add(img(xc2+1,yc2));
+	 xc.add(xc2+1);
+	 yc.add(yc2);
+		   }	   
+       if(yc2+1<img.height())
+	 {
+	   structure.add(img(xc2,yc2+1));
+	   xc.add(xc2);
+	   yc.add(yc2+1);
+		     }
+	 if(xc2-1>0)
+	   {
+	     structure.add(img(xc2-1,yc2));
+	     xc.add(xc2-1);
+	     yc.add(yc2);
+	   }
+	       if(yc2-1>0)
+		 {
+		   structure.add(img(xc2,yc2-1));
+		   xc.add(xc2);
+		   yc.add(yc2-1);
+		 }
+	       
+	       framecount++;
+	       if((framecount % frameFreq)==0)
+		 {
+
+		   anime.addFrame(img);
+		 
+		 }
+	       //	       cout<<"here"<<endl;
+	       
+	   
+   }
 
 
+    }
+
+  
+    
+  return anime;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    return animation();
 }
