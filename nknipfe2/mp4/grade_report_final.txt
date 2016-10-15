@@ -1,0 +1,409 @@
+Grading r32928 by nknipfe2 committed on Fri Oct 14 19:28:07 CDT 2016
+Monad Autograder
+Testing mp4 at 2016-10-15 01:25:41
+
+"Eighty percent of success is showing up." ~ Woody Allen
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testStackPushPeek  . . . . . . . [1 pts] - passed
+testStackPushPop . . . . . . . . [1 pts] - passed
+testStackManyPushesPeek  . . . . [1 pts] - passed
+testStackManyPushesTwoPops . . . [1 pts] - passed
+testStackManyOperations  . . . . [1 pts] - passed
+testStackDuplicateElements . . . [1 pts] - passed
+testQueueEnqueuePeek . . . . . . [1 pts] - passed
+testQueueEnqueueDequeue  . . . . [1 pts] - passed
+testQueueManyEnqueuesPeek  . . . [1 pts] - passed
+testQueueManyEnqueuesTwoDequeues [1 pts] - passed
+testQueueManyOperations  . . . . [1 pts] - passed
+stack_peek_1 . . . . . . . . . . [1 pts] - passed
+stack_pop_peek_1 . . . . . . . . [1 pts] - passed
+stack_pop_2  . . . . . . . . . . [2 pts] - passed
+stack_isEmpty_1  . . . . . . . . [1 pts] - passed
+stack_isEmpty_2  . . . . . . . . [1 pts] - passed
+stack_push_pop_isEmpty . . . . . [2 pts] - passed
+stack_push_and_pop . . . . . . . [2 pts] - passed
+queue_peek_1 . . . . . . . . . . [1 pts] - passed
+queue_dequeue_peek_1 . . . . . . [2 pts] - passed
+queue_dequeue_2  . . . . . . . . [2 pts] - passed
+queue_isEmpty_1  . . . . . . . . [1 pts] - passed
+queue_isEmpty_2  . . . . . . . . [1 pts] - passed
+queue_enqueue_dequeue_isEmpty  . [2 pts] - passed
+queue_enqueue_and_dequeue  . . . [2 pts] - passed
+testThroughStackQueue  . . . . . [2 pts] - passed
+testEnqueueConstantTime  . . . . [2 pts] - passed
+testDequeueConstantTime  . . . . [2 pts] - passed
+testEnqueuePeekDequeueTime . . . [2 pts] - passed
+solid_picker_15  . . . . . . . . [4 pts] - passed
+gradient_picker_16 . . . . . . . [4 pts] - FAILED: unit_tests.cpp:570: Incorrect Output
+gradient_picker_17 . . . . . . . [4 pts] - passed
+DFS_solid  . . . . . . . . . . . [4 pts] - passed
+BFS_solid  . . . . . . . . . . . [4 pts] - passed
+DFS_grid . . . . . . . . . . . . [4 pts] - passed
+BFS_grid . . . . . . . . . . . . [4 pts] - passed
+DFS_gradient . . . . . . . . . . [4 pts] - passed
+BFS_gradient . . . . . . . . . . [4 pts] - passed
+DFS_18 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:683: Images differ too much at point (1, 1)
+DFS_19 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:693: Images differ too much at point (0, 6)
+DFS_20 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:703: Images differ too much at point (4, 1)
+DFS_21 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:713: Images differ too much at point (0, 7)
+DFS_22 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:723: Images differ too much at point (6, 1)
+DFS_23 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:733: Images differ too much at point (0, 0)
+BFS_24 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:743: Images differ too much at point (0, 5)
+BFS_25 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:753: Images differ too much at point (0, 0)
+BFS_26 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:763: Images differ too much at point (4, 13)
+BFS_27 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:773: Images differ too much at point (0, 0)
+BFS_28 . . . . . . . . . . . . . [2 pts] - FAILED: Aborted
+BFS_29 . . . . . . . . . . . . . [2 pts] - FAILED: unit_tests.cpp:791: Images differ too much at point (0, 0)
+
+
+Total score...
+================================================================
+TOTAL SCORE: 72
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+gradient_picker_16 [4 points]
+Result: FAILED: unit_tests.cpp:570: Incorrect Output
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Your output:
+operator()(1, 1) = {17, 236, 63}
+operator()(1, 2) = {13, 243, 57}
+operator()(1, 4) = {20, 228, 70}
+operator()(1, 8) = {33, 199, 97}
+operator()(1, 16) = {60, 141, 150}
+operator()(1, 32) = {110, 32, 250}
+operator()(2, 1) = {13, 243, 57}
+operator()(2, 2) = {10, 250, 50}
+operator()(2, 4) = {17, 236, 63}
+operator()(2, 8) = {30, 206, 90}
+operator()(2, 16) = {57, 148, 143}
+operator()(2, 32) = {110, 32, 250}
+operator()(4, 1) = {20, 228, 70}
+operator()(4, 2) = {17, 236, 63}
+operator()(4, 4) = {23, 221, 77}
+operator()(4, 8) = {37, 192, 103}
+operator()(4, 16) = {63, 134, 157}
+operator()(4, 32) = {110, 32, 250}
+operator()(8, 1) = {33, 199, 97}
+operator()(8, 2) = {30, 206, 90}
+operator()(8, 4) = {37, 192, 103}
+operator()(8, 8) = {50, 162, 130}
+operator()(8, 16) = {77, 105, 183}
+operator()(8, 32) = {110, 32, 250}
+operator()(16, 1) = {60, 141, 150}
+operator()(16, 2) = {57, 148, 143}
+operator()(16, 4) = {63, 134, 157}
+operator()(16, 8) = {77, 105, 183}
+operator()(16, 16) = {103, 46, 237}
+operator()(16, 32) = {110, 32, 250}
+operator()(32, 1) = {110, 32, 250}
+operator()(32, 2) = {110, 32, 250}
+operator()(32, 4) = {110, 32, 250}
+operator()(32, 8) = {110, 32, 250}
+operator()(32, 16) = {110, 32, 250}
+operator()(32, 32) = {110, 32, 250}
+Testing complete.
+
+
+Expected output:
+operator()(1, 1) = {110, 32, 250}
+operator()(1, 2) = {110, 32, 250}
+operator()(1, 4) = {110, 32, 250}
+operator()(1, 8) = {110, 32, 250}
+operator()(1, 16) = {93, 68, 217}
+operator()(1, 32) = {40, 184, 110}
+operator()(2, 1) = {110, 32, 250}
+operator()(2, 2) = {110, 32, 250}
+operator()(2, 4) = {110, 32, 250}
+operator()(2, 8) = {110, 32, 250}
+operator()(2, 16) = {90, 75, 210}
+operator()(2, 32) = {37, 192, 103}
+operator()(4, 1) = {110, 32, 250}
+operator()(4, 2) = {110, 32, 250}
+operator()(4, 4) = {110, 32, 250}
+operator()(4, 8) = {110, 32, 250}
+operator()(4, 16) = {97, 61, 223}
+operator()(4, 32) = {43, 177, 117}
+operator()(8, 1) = {110, 32, 250}
+operator()(8, 2) = {110, 32, 250}
+operator()(8, 4) = {110, 32, 250}
+operator()(8, 8) = {110, 32, 250}
+operator()(8, 16) = {110, 32, 250}
+operator()(8, 32) = {57, 148, 143}
+operator()(16, 1) = {110, 32, 250}
+operator()(16, 2) = {110, 32, 250}
+operator()(16, 4) = {110, 32, 250}
+operator()(16, 8) = {110, 32, 250}
+operator()(16, 16) = {110, 32, 250}
+operator()(16, 32) = {83, 90, 197}
+operator()(32, 1) = {110, 32, 250}
+operator()(32, 2) = {110, 32, 250}
+operator()(32, 4) = {110, 32, 250}
+operator()(32, 8) = {110, 32, 250}
+operator()(32, 16) = {110, 32, 250}
+operator()(32, 32) = {110, 32, 250}
+Testing complete.
+
+
+----------------------------------------------------------------
+DFS_18 [2 points]
+Result: FAILED: unit_tests.cpp:683: Images differ too much at point (1, 1)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (1, 1).
+soln: R=234 G=23 B=23
+yours: R=10 G=250 B=50
+
+----------------------------------------------------------------
+DFS_19 [2 points]
+Result: FAILED: unit_tests.cpp:693: Images differ too much at point (0, 6)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 5);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 4);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 3);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 2);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 1);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 6);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 7);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 8);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 9);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+Images differ too much at point (0, 6).
+soln: R=110 G=32 B=250
+yours: R=255 G=255 B=255
+
+----------------------------------------------------------------
+DFS_20 [2 points]
+Result: FAILED: unit_tests.cpp:703: Images differ too much at point (4, 1)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (4, 1).
+soln: R=234 G=23 B=23
+yours: R=10 G=250 B=50
+
+----------------------------------------------------------------
+DFS_21 [2 points]
+Result: FAILED: unit_tests.cpp:713: Images differ too much at point (0, 7)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 6);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 5);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 4);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 3);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 2);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 1);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 7);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 8);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 9);
+            Truncating request to fit in the range [0,9] x [0,9].
+
+Images differ too much at point (0, 7).
+soln: R=110 G=32 B=250
+yours: R=255 G=255 B=255
+
+----------------------------------------------------------------
+DFS_22 [2 points]
+Result: FAILED: unit_tests.cpp:723: Images differ too much at point (6, 1)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (6, 1).
+soln: R=234 G=23 B=23
+yours: R=55 G=152 B=140
+
+----------------------------------------------------------------
+DFS_23 [2 points]
+Result: FAILED: unit_tests.cpp:733: Images differ too much at point (0, 0)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (0, 0).
+soln: R=70 G=120 B=170
+yours: R=234 G=23 B=23
+
+----------------------------------------------------------------
+BFS_24 [2 points]
+Result: FAILED: unit_tests.cpp:743: Images differ too much at point (0, 5)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (0, 5).
+soln: R=10 G=250 B=50
+yours: R=255 G=255 B=254
+
+----------------------------------------------------------------
+BFS_25 [2 points]
+Result: FAILED: unit_tests.cpp:753: Images differ too much at point (0, 0)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 5);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 6);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 4);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 7);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 3);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 8);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 2);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 9);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 1);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 10);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 11);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 12);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+Images differ too much at point (0, 0).
+soln: R=110 G=32 B=250
+yours: R=255 G=255 B=254
+
+----------------------------------------------------------------
+BFS_26 [2 points]
+Result: FAILED: unit_tests.cpp:763: Images differ too much at point (4, 13)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (4, 13).
+soln: R=255 G=255 B=0
+yours: R=10 G=250 B=50
+
+----------------------------------------------------------------
+BFS_27 [2 points]
+Result: FAILED: unit_tests.cpp:773: Images differ too much at point (0, 0)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 6);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 7);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 5);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 8);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 4);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 9);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 3);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 10);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 2);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 11);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 1);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+[EasyPNG]: Warning: attempted to access non-existent pixel (18446744073709551615, 12);
+            Truncating request to fit in the range [0,14] x [0,14].
+
+Images differ too much at point (0, 0).
+soln: R=110 G=32 B=250
+yours: R=255 G=255 B=254
+
+----------------------------------------------------------------
+BFS_28 [2 points]
+Result: FAILED: Aborted
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+terminating with uncaught exception of type std::bad_alloc: std::bad_alloc
+
+----------------------------------------------------------------
+BFS_29 [2 points]
+Result: FAILED: unit_tests.cpp:791: Images differ too much at point (0, 0)
+Took 0ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Images differ too much at point (0, 0).
+soln: R=70 G=120 B=170
+yours: R=255 G=255 B=254
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 72
+
