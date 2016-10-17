@@ -1,0 +1,157 @@
+Grading r34288 by nknipfe2 committed on Sun Oct 16 20:55:27 CDT 2016
+Monad Autograder
+Testing lab_huffman at 2016-10-17 00:27:49
+
+"The trouble with programmers is that you can never tell what a programmer is doing until it's too late." ~ Seymour Cray
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_encoder_binary_4  . . . . [20 pts] - FAILED: Segmentation fault
+test_encoder_binary_8  . . . . [20 pts] - FAILED: Segmentation fault
+test_encoder_valgrind_2 (asan) [6 pts]  - FAILED: Memory errors detected by ASAN
+test_encoder_writetree_4 . . . [2 pts]  - FAILED: Segmentation fault
+test_encoder_writetree_8 . . . [2 pts]  - FAILED: Segmentation fault
+test_decode_4  . . . . . . . . [20 pts] - FAILED: Segmentation fault
+test_decode_8  . . . . . . . . [20 pts] - FAILED: Segmentation fault
+test_decode_readtree_4 . . . . [2 pts]  - FAILED: Segmentation fault
+test_decode_readtree_8 . . . . [2 pts]  - FAILED: Segmentation fault
+test_the_works (asan)  . . . . [6 pts]  - FAILED: Memory errors detected by ASAN
+
+
+Total score...
+================================================================
+TOTAL SCORE: 0
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_encoder_binary_4 [20 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_binary_8 [20 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_valgrind_2 (run under asan) [6 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_encoder_valgrind_2 [worth 6 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==17940==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x0000006b18a6 bp 0x7ffe5bac31b0 sp 0x7ffe5bac1fc0 T0)
+    #0 0x6b18a5 in HuffmanTree::buildTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x6b18a5)
+    #1 0x6ae785 in HuffmanTree::HuffmanTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> >) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x6ae785)
+    #2 0x74dbc3 in encoder::encodeFile(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x74dbc3)
+    #3 0x656e70 in proxy_test::test_encoder_valgrind_2(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x656e70)
+    #4 0x4e98b8 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4e98b8)
+    #5 0x4cea63 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4cea63)
+    #6 0x4c05ae in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4c05ae)
+    #7 0x4bad92 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4bad92)
+    #8 0x4b0a57 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4b0a57)
+    #9 0x4afbf7 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4afbf7)
+    #10 0x4ac359 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4ac359)
+    #11 0x4a9cae in main (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4a9cae)
+    #12 0x7fbf78e6eb14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+    #13 0x4a282c in _start (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4a282c)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 HuffmanTree::buildTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> > const&)
+==17940==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+----------------------------------------------------------------
+test_encoder_writetree_4 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_encoder_writetree_8 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_4 [20 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_8 [20 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_readtree_4 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_decode_readtree_8 [2 points]
+Result: FAILED: Segmentation fault
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_the_works (run under asan) [6 points]
+Result: FAILED: Memory errors detected by ASAN
+Took unknown time (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_the_works [worth 6 points, output below]
+ASAN:SIGSEGV
+=================================================================
+==17964==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000008 (pc 0x0000006b18a6 bp 0x7ffe1433a390 sp 0x7ffe143391a0 T0)
+    #0 0x6b18a5 in HuffmanTree::buildTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x6b18a5)
+    #1 0x6ae785 in HuffmanTree::HuffmanTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> >) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x6ae785)
+    #2 0x74dbc3 in encoder::encodeFile(std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x74dbc3)
+    #3 0x674518 in proxy_test::test_the_works(util::sizedpipestream<512ul>&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x674518)
+    #4 0x4e98b8 in monad_shared::unit_test_input::execute(util::sizedpipestream<512ul>&) const (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4e98b8)
+    #5 0x4cea63 in proxy::test_execution::child_test() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4cea63)
+    #6 0x4c05ae in proxy::test_execution::child() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4c05ae)
+    #7 0x4bad92 in proxy::RunTests::run_single_test(monad_shared::unit_test_input const&) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4bad92)
+    #8 0x4b0a57 in proxy::RunTests::run_single_test(char const*) (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4b0a57)
+    #9 0x4afbf7 in proxy::RunTests::execute_by_mode() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4afbf7)
+    #10 0x4ac359 in proxy::RunTests::execute() (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4ac359)
+    #11 0x4a9cae in main (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4a9cae)
+    #12 0x7f2e1af37b14 in __libc_start_main (/lib64/libc.so.6+0x21b14)
+    #13 0x4a282c in _start (/dev/shm/cs225student/autograder/monad/monad/lab_huffman_grade/proxy-asan+0x4a282c)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV ??:0 HuffmanTree::buildTree(std::__1::vector<Frequency, std::__1::allocator<Frequency> > const&)
+==17964==ABORTING
+Result: FAILED:
+Memory Errors Detected by ASAN
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 0
+
