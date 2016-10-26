@@ -15,9 +15,21 @@
 class Quadtree
 {
   public:
+   Quadtree();
+   ~Quadtree();
+   Quadtree(PNG const &source, int resolution);
+   void buildTree (PNG const &source, int resolution);
+   RGBAPixel getPixel(int x, int y) const;
+   PNG decompress() const;
+   Quadtree const&   operator=(Quadtree const & other);
+   Quadtree(Quadtree const &other);
+ private:
 
-  private:
-    /**
+   //   void clear(QuadtreeNode *&node);
+   //void copy(const QuadtreeNode *&other);
+
+
+   /**
      * A simple class representing a single node of a Quadtree.
      * You may want to add to this class; in particular, it could
      * probably use a constructor or two...
@@ -31,9 +43,35 @@ class Quadtree
         QuadtreeNode* seChild; /**< pointer to southeast child */
 
         RGBAPixel element; /**< the pixel stored as this node's "data" */
+	int x;
+	int y;
+	int resol;
+	//constructor for the nodes so they have x,y coordinates stored
+	QuadtreeNode(int resolution, int xc, int yc)
+	   {
+	     
+	resol=resolution;
+	x=xc;
+	y=yc;
+	nwChild=NULL;
+	swChild=NULL;
+	neChild=NULL;
+	seChild=NULL;
+      }
+	  
     };
 
     QuadtreeNode* root; /**< pointer to root of quadtree */
+    QuadtreeNode*node;
+
+    
+    
+    void clear(QuadtreeNode *&node);
+    //include source here to eventually keep track of the average color of children
+    void buildtreehelp(PNG const & source, int resolution, QuadtreeNode *node);
+    RGBAPixel getpixelhelp(int x, int y, QuadtreeNode *node) const;
+    void copy(QuadtreeNode *&node);
+
 
 
 /**** Functions for testing/grading                      ****/
