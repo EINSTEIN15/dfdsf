@@ -15,14 +15,29 @@
 class Quadtree
 {
   public:
-   Quadtree();
-   ~Quadtree();
-   Quadtree(PNG const &source, int resolution);
-   void buildTree (PNG const &source, int resolution);
-   RGBAPixel getPixel(int x, int y) const;
-   PNG decompress() const;
-   Quadtree const&   operator=(Quadtree const & other);
-   Quadtree(Quadtree const &other);
+Quadtree();
+   
+~Quadtree();
+   
+Quadtree(PNG const &source, int resolution);
+   
+void buildTree (PNG const &source, int resolution);
+   
+RGBAPixel getPixel(int x, int y) const;
+   
+PNG decompress() const;
+   
+Quadtree const&   operator=(Quadtree const & other);
+   
+Quadtree(Quadtree const &other);
+
+ void clockwiseRotate();
+
+
+
+
+
+
  private:
 
    //   void clear(QuadtreeNode *&node);
@@ -68,10 +83,10 @@ class Quadtree
     
     void clear(QuadtreeNode *&node);
     //include source here to eventually keep track of the average color of children
-    void buildtreehelp(PNG const & source, int resolution, QuadtreeNode *node);
+    void buildtreehelp(PNG const & source, int resolution, QuadtreeNode *&node,int x, int y);
     RGBAPixel getpixelhelp(int x, int y, QuadtreeNode *node) const;
-    void copy(QuadtreeNode *&node);
-
+    void copy(QuadtreeNode *&orig, QuadtreeNode *copynode);
+    void clockwiserotatehelper(QuadtreeNode *&node);
 
 
 /**** Functions for testing/grading                      ****/
