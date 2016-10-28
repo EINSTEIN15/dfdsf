@@ -1,8 +1,8 @@
-Grading r39193 by nknipfe2 committed on Wed Oct 26 20:12:28 CDT 2016
+Grading r39265 by enx-cs225autograder committed on Thu Oct 27 02:06:18 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-27 01:04:08
+Testing mp5 at 2016-10-28 01:00:45
 
-"A lot of the things that I say are true, but I don't actually mean them." ~ Alexey Stepanov
+"And I'm sitting there hallucinating a bird on my pillow from the benadryl and I think to myself ... 'I need to write a poem about Makefiles'." ~ Lisa Sproat
 
 Setting up test environment...
 Compiling...
