@@ -32,7 +32,9 @@ Quadtree const&   operator=(Quadtree const & other);
 Quadtree(Quadtree const &other);
 
  void clockwiseRotate();
-
+ void prune (int tolerance);
+ int pruneSize(int tolerance) const;
+ int idealPrune(int numLeaves) const;
 
 
 
@@ -77,7 +79,7 @@ Quadtree(Quadtree const &other);
     };
 
     QuadtreeNode* root; /**< pointer to root of quadtree */
-    QuadtreeNode*node;
+    //  QuadtreeNode*node;
 
     
     
@@ -85,9 +87,10 @@ Quadtree(Quadtree const &other);
     //include source here to eventually keep track of the average color of children
     void buildtreehelp(PNG const & source, int resolution, QuadtreeNode *&node,int x, int y);
     RGBAPixel getpixelhelp(int x, int y, QuadtreeNode *node) const;
-    void copy(QuadtreeNode *&orig, QuadtreeNode *copynode);
-    void clockwiserotatehelper(QuadtreeNode *&node);
-
+    void copy(QuadtreeNode *tree1,QuadtreeNode *&tree2);
+    void clockwiserotatehelper(QuadtreeNode *node);
+    void prunehelper(int tolerance, QuadtreeNode *&node);
+    bool checkdifference(int tolerance, QuadtreeNode *node);
 
 /**** Functions for testing/grading                      ****/
 /**** Do not remove this line or copy its contents here! ****/
