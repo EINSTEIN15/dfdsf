@@ -1,8 +1,8 @@
-Grading r40063 by nknipfe2 committed on Fri Oct 28 19:47:15 CDT 2016
+Grading r40302 by enx-cs225autograder committed on Sat Oct 29 02:09:57 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-29 01:03:09
+Testing mp5 at 2016-10-30 01:00:53
 
-"int getRandomNumber() { return 4; } // chosen by fair dice roll. guaranteed to be random." ~ XKCD #221
+"Now that's just math for math's sake." ~ Prof. Julia Hockenmaier
 
 Setting up test environment...
 Compiling...
@@ -33,7 +33,7 @@ test_decompress_unpruned_1 [1 pts] - passed
 test_decompress_unpruned_2 [1 pts] - passed
 test_decompress_unpruned_3 [1 pts] - passed
 test_decompress_unpruned_4 [1 pts] - passed
-time_getPixel_logn . . . . [4 pts] - FAILED
+time_getPixel_logn . . . . [4 pts] - passed
 time_decompress_n (asan) . [4 pts] - passed
 valgrind_big3 (asan) . . . [4 pts] - passed
 test_clockwiseRotate_1 . . [1 pts] - FAILED
@@ -64,5 +64,5 @@ test_const_correctness . . [4 pts] - passed
 
 Total score...
 ================================================================
-TOTAL SCORE: 46
+TOTAL SCORE: 50
 
