@@ -74,7 +74,7 @@ Quadtree(Quadtree const &other);
 	swChild=NULL;
 	neChild=NULL;
 	seChild=NULL;
-      }
+     }
 	  
     };
 
@@ -90,8 +90,9 @@ Quadtree(Quadtree const &other);
     void copy(QuadtreeNode *tree1,QuadtreeNode *&tree2);
     void clockwiserotatehelper(QuadtreeNode *node);
     void prunehelper(int tolerance, QuadtreeNode *&node);
-    bool checkdifference(int tolerance, QuadtreeNode *node);
-
+    int checkdifference(QuadtreeNode *node1, QuadtreeNode *node2);
+    bool checker(QuadtreeNode *node1, QuadtreeNode *node2, int tolerance);
+    void decompresshelper(QuadtreeNode *&node);
 /**** Functions for testing/grading                      ****/
 /**** Do not remove this line or copy its contents here! ****/
 #include "quadtree_given.h"

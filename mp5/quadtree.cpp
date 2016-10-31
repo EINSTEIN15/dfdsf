@@ -4,7 +4,7 @@
  * @date Spring 2008
  */
 #include "quadtree.h"
-
+#include <math.h>
 Quadtree::Quadtree()
 {
   root=NULL;
@@ -92,14 +92,17 @@ PNG Quadtree::decompress()const
   int resolution=root->resol;
   PNG img(resolution,resolution);
   for(int a=0;a<resolution;a++)
-    {
-  for(int b=0;b<resolution;b++)
-    {
-	  *(img(a,b))=getPixel(a,b);
-     
-    }
-    }
+    for(int b=0; b<resolution;b++)
+      {
+
+	*img(a,b)=getPixel(a,b);
+
+      }
+
+
+
   return img;
+  
 }
 void Quadtree:: copy(QuadtreeNode *tree1, QuadtreeNode *&tree2)
 {
@@ -223,29 +226,64 @@ void  Quadtree::clockwiserotatehelper(QuadtreeNode *node)
   if(node->nwChild==NULL)
     {
       return;
-
     }
-  // int x1=node->neChild->x;
-  //int y1=node->neChild->y;
+ 
+
+  int xnw = node->nwChild->x;
+  int ynw = node->nwChild->y;
   
-  
-  
+  int xne = node->neChild->x;
+  int yne = node->neChild->y;
+
+  int xse = node->seChild->x;
+  int yse = node->seChild->y;
+
+  int xsw = node->swChild->x;
+  int ysw = node->swChild->y;
 
   tmp=node->nwChild;
   node->nwChild=node->neChild;
   node->neChild=node->seChild;
   node->seChild=node->swChild;
   node->swChild=tmp;
- 
+  
+  node->nwChild->x=xne;
+  node->nwChild->y=yne;
+
+  node->neChild->x=xse;
+  node->neChild->y=yse;
+
+  node->seChild->x=xsw;
+  node->seChild->y=ysw;
+
+  node->swChild->x=xnw;
+  node->swChild->y=ynw;
+  
   clockwiserotatehelper(node->nwChild);
   clockwiserotatehelper(node->swChild);
   clockwiserotatehelper(node->seChild);
   clockwiserotatehelper(node->swChild);
 
+  /*  
+  node->nwChild->x=xne;
+  node->nwChild->y=yne;
+
+  node->neChild->x=xse;
+  node->neChild->y=yse;
+
+  node->seChild->x=xsw;
+  node->seChild->y=ysw;
+
+  node->swChild->x=xnw;
+  node->swChild->y=ynw;
+  */
+
+
+
 }
 
 void Quadtree::prune(int tolerance)
-{
+{ 
   prunehelper(tolerance,root);
 }
 int Quadtree::pruneSize(int tolerance)const
@@ -262,17 +300,18 @@ int Quadtree::idealPrune(int numLeaves)const
 
 void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node)
 {
-  if(node->nwChild==NULL)
+  if(node==NULL||node->nwChild==NULL)
     {
       return;
     }
-  int difference=0;
-  if(tolerance<=difference)
+  
+  if(checker(node,node,tolerance)==true)
     {
       clear(node->nwChild);
       clear(node->swChild);
       clear(node->neChild);
       clear(node->seChild);
+      return;
     }
 
   prunehelper(tolerance,node->nwChild);
@@ -281,17 +320,36 @@ void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node)
   prunehelper(tolerance,node->seChild);
 
 }
-    
-bool Quadtree:: checkdifference( int tolerance, QuadtreeNode *node)
+
+
+bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance)
 {
+  if(node2->nwChild==NULL)
+    {
+      if(checkdifference(node1,node2)<=tolerance)
+	{
+	  return true;
+	}
+      else
+	{
+	  return false;
+
+	}
+
+    }
+  else
+    {
+      return checker(node1,node2->nwChild,tolerance)&&checker(node1,node2->neChild,tolerance)&&checker(node1,node2->swChild,tolerance)&&checker(node1,node2->seChild,tolerance);
+    }
 
 
 
 
 
-  return true;
-
-
-
-
+}    
+int Quadtree:: checkdifference( QuadtreeNode *node1, QuadtreeNode *node2)
+{
+  int x=(pow(node2->element.red-node1->element.red,2)+(pow(node2->element.green-node1->element.green,2)+(pow(node2->element.blue-node1->element.blue,2))));
+  return x;
 }
+
