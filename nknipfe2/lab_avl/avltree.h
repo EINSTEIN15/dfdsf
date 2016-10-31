@@ -203,6 +203,15 @@ class AVLTree
 
     /** This variable is used for grading. */
     ostream* _out;
+    int difference(Node * node);
+    int Height(Node * node);
+    Node*  min(Node *node);
+    void Balance(Node *&node);
+
+
+
+
+
 };
 
 #include "avltree_given.cpp"
