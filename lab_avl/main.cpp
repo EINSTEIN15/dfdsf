@@ -73,6 +73,7 @@ void testRotateLeft()
     tree.print();
     printAfter(9);
     tree.insert(9, 9);
+    //    tree.rotateLeft(root);
     tree.print();
     printEnd();
 }
