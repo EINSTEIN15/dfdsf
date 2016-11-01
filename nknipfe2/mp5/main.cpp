@@ -47,6 +47,7 @@ int main()
     fullTree.clockwiseRotate();
     imgOut = fullTree.decompress();
     imgOut.writeToFile("outRotated.png");
+    //fullTree.printTree();
 
     // test prune
     fullTree = fullTree2;
@@ -69,6 +70,9 @@ int main()
     cout << "Printing tinyTree:\n";
     tinyTree.prune(100);
     tinyTree.printTree();
-
+    //cout<<endl;
+    //tinyTree.clockwiseRotate();
+    //tinyTree.printTree();
+    //imgOut.writeToFile("CW.png");
     return 0;
 }
