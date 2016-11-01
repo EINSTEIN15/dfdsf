@@ -5,6 +5,8 @@
  */
 #include "quadtree.h"
 #include <math.h>
+#include <iostream>
+using namespace std;
 Quadtree::Quadtree()
 {
   root=NULL;
@@ -167,7 +169,7 @@ RGBAPixel Quadtree::getpixelhelp(int x, int y, QuadtreeNode *node) const
       return *(new RGBAPixel());
       
     }
-  if(/*(node->x==x && node->y==y&&node->resol==1)||*/node->nwChild==NULL)
+  if((node->x==x && node->y==y&&node->resol==1)||node->nwChild==NULL)
     {
       return node->element;
     }
@@ -223,44 +225,56 @@ void  Quadtree::clockwiserotatehelper(QuadtreeNode *node)
 {
   QuadtreeNode *tmp;
 
-  if(node->nwChild==NULL)
+  if(node==NULL||node->nwChild==NULL)
     {
       return;
     }
- 
+  
+  //cout<<"node"<<endl;
+
+    
 
   int xnw = node->nwChild->x;
   int ynw = node->nwChild->y;
-  
+  int nwresol=node->nwChild->resol;
+
   int xne = node->neChild->x;
   int yne = node->neChild->y;
+   int neresol=node->neChild->resol;
 
   int xse = node->seChild->x;
   int yse = node->seChild->y;
+ int seresol=node->seChild->resol;
+  
 
   int xsw = node->swChild->x;
   int ysw = node->swChild->y;
+ int swresol=node->swChild->resol;
 
   tmp=node->nwChild;
-  node->nwChild=node->neChild;
-  node->neChild=node->seChild;
-  node->seChild=node->swChild;
-  node->swChild=tmp;
+  node->nwChild=node->swChild;
+  node->swChild=node->seChild;
+  node->seChild=node->neChild;
+  node->neChild=tmp;
   
-  node->nwChild->x=xne;
-  node->nwChild->y=yne;
-
-  node->neChild->x=xse;
-  node->neChild->y=yse;
-
-  node->seChild->x=xsw;
-  node->seChild->y=ysw;
-
-  node->swChild->x=xnw;
-  node->swChild->y=ynw;
+  node->nwChild->x=node->x;
+  node->nwChild->y=node->y;
+  node->nwChild->resol=nwresol;
   
+  node->neChild->x=node->x+node->resol/2;;
+  node->neChild->y=node->y;
+  node->neChild->resol=neresol;
+
+  node->seChild->x=node->x+node->resol/2;
+  node->seChild->y=node->y+node->resol/2;
+  node->seChild->resol=seresol;
+
+  node->swChild->x=node->x;
+  node->swChild->y=node->y+node->resol/2;
+  node->swChild->resol=swresol;
+
   clockwiserotatehelper(node->nwChild);
-  clockwiserotatehelper(node->swChild);
+  clockwiserotatehelper(node->neChild);
   clockwiserotatehelper(node->seChild);
   clockwiserotatehelper(node->swChild);
 
@@ -286,7 +300,7 @@ void Quadtree::prune(int tolerance)
 { 
   prunehelper(tolerance,root);
 }
-int Quadtree::pruneSize(int tolerance)
+int Quadtree::pruneSize(int tolerance) const
 {
   // QuadtreeNode *tmp=root;
 
@@ -295,7 +309,10 @@ int Quadtree::pruneSize(int tolerance)
 
 int Quadtree::idealPrune(int numLeaves)const
 {
-  return 28594;
+  
+  return idealprunehelper(0,3*255*255,numLeaves);
+
+
 }
 
 
@@ -319,11 +336,10 @@ void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node)
   prunehelper(tolerance,node->swChild);
   prunehelper(tolerance,node->neChild);
   prunehelper(tolerance,node->seChild);
-
 }
 
 
-bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance) 
+bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance) const  
 {
   if(node2->nwChild==NULL)
     {
@@ -348,19 +364,39 @@ bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance)
 
 
 }    
-int Quadtree:: checkdifference( QuadtreeNode *node1, QuadtreeNode *node2)
+int Quadtree:: checkdifference( QuadtreeNode *node1, QuadtreeNode *node2) const
 {
   int x=(pow(node2->element.red-node1->element.red,2)+(pow(node2->element.green-node1->element.green,2)+(pow(node2->element.blue-node1->element.blue,2))));
   return x;
 }
 
-int Quadtree :: prunesizehelper(int tolerance, QuadtreeNode *node) 
+int Quadtree :: prunesizehelper(int tolerance, QuadtreeNode *node) const
 { 
-  QuadtreeNode *tmp;
-  tmp=root;
-  prunehelper(tolerance,tmp);
-  return count(tmp);
+  int c=1;
+  if(node==NULL)
+    {
+      return 0;
 
+    }
+  if(node->nwChild==NULL)
+    {
+      return 1;
+
+    }
+  if(checker(node,node,tolerance)==true)
+    {
+      return c;
+
+    }
+  else
+    {
+      c+=prunesizehelper(tolerance,node->nwChild);
+      c+=prunesizehelper(tolerance,node->neChild);
+      c+=prunesizehelper(tolerance,node->swChild);
+      c+=prunesizehelper(tolerance,node->seChild);
+      return c;
+    }
+ 
 }
 int Quadtree :: count(QuadtreeNode *node)
 {
@@ -390,3 +426,45 @@ int Quadtree :: count(QuadtreeNode *node)
     }
 
 }
+int Quadtree :: idealprunehelper(int min, int max, int numLeaves) const
+{
+  int midpoint=(min+max)/2;
+  if(pruneSize(midpoint)>numLeaves)
+    {
+      
+      idealprunehelper(min,midpoint,numLeaves);
+
+    }
+  if(pruneSize(midpoint)==numLeaves)
+    {
+
+      return pruneSize(midpoint);
+
+    }
+  if(pruneSize(midpoint)<numLeaves)
+    {
+      
+      if(midpoint==min)
+	{
+	  
+	      return midpoint;
+
+	}
+      else
+	{
+
+	  idealprunehelper(midpoint,max,numLeaves);
+
+	}
+	
+    }
+      
+	
+
+   return pruneSize(midpoint);
+	
+    
+
+
+}
+
