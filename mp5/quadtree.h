@@ -33,7 +33,7 @@ Quadtree(Quadtree const &other);
 
  void clockwiseRotate();
  void prune (int tolerance);
- int pruneSize(int tolerance) const;
+ int pruneSize(int tolerance) ;
  int idealPrune(int numLeaves) const;
 
 
@@ -92,7 +92,8 @@ Quadtree(Quadtree const &other);
     void prunehelper(int tolerance, QuadtreeNode *&node);
     int checkdifference(QuadtreeNode *node1, QuadtreeNode *node2);
     bool checker(QuadtreeNode *node1, QuadtreeNode *node2, int tolerance);
-    void decompresshelper(QuadtreeNode *&node);
+    int prunesizehelper(int tolerance, QuadtreeNode *node);
+    int count(QuadtreeNode *node);
 /**** Functions for testing/grading                      ****/
 /**** Do not remove this line or copy its contents here! ****/
 #include "quadtree_given.h"

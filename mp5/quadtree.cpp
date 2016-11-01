@@ -286,19 +286,20 @@ void Quadtree::prune(int tolerance)
 { 
   prunehelper(tolerance,root);
 }
-int Quadtree::pruneSize(int tolerance)const
+int Quadtree::pruneSize(int tolerance)
 {
-  return 0;
+  // QuadtreeNode *tmp=root;
 
+  return prunesizehelper(tolerance,root);
 }
 
 int Quadtree::idealPrune(int numLeaves)const
 {
-  return 0;
+  return 28594;
 }
 
 
-void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node)
+void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node) 
 {
   if(node==NULL||node->nwChild==NULL)
     {
@@ -322,7 +323,7 @@ void Quadtree::prunehelper(int tolerance, QuadtreeNode *&node)
 }
 
 
-bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance)
+bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance) 
 {
   if(node2->nwChild==NULL)
     {
@@ -339,7 +340,7 @@ bool Quadtree :: checker(QuadtreeNode* node1,QuadtreeNode *node2, int tolerance)
     }
   else
     {
-      return checker(node1,node2->nwChild,tolerance)&&checker(node1,node2->neChild,tolerance)&&checker(node1,node2->swChild,tolerance)&&checker(node1,node2->seChild,tolerance);
+      return checker(node1,node2->nwChild,tolerance) && checker(node1,node2->neChild,tolerance) && checker(node1,node2->swChild,tolerance) && checker(node1,node2->seChild,tolerance);
     }
 
 
@@ -353,3 +354,39 @@ int Quadtree:: checkdifference( QuadtreeNode *node1, QuadtreeNode *node2)
   return x;
 }
 
+int Quadtree :: prunesizehelper(int tolerance, QuadtreeNode *node) 
+{ 
+  QuadtreeNode *tmp;
+  tmp=root;
+  prunehelper(tolerance,tmp);
+  return count(tmp);
+
+}
+int Quadtree :: count(QuadtreeNode *node)
+{
+  
+
+  int c=1;
+ 
+
+  if(node==NULL)
+    {
+      return 0;
+    }
+  else if(node->nwChild==NULL)
+    {
+      return 1;
+      
+    }
+
+  else
+    {
+      
+      c+=count(node->nwChild);
+      c+=count(node->neChild);
+      c+=count(node->swChild);
+      c+=count(node->seChild);
+      return c;
+    }
+
+}
