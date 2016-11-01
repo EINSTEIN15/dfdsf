@@ -1,8 +1,8 @@
-Grading r40842 by enx-cs225autograder committed on Sun Oct 30 02:06:41 CDT 2016
+Grading r42948 by nknipfe2 committed on Mon Oct 31 20:30:23 CDT 2016
 Monad Autograder
-Testing mp5 at 2016-10-31 01:33:14
+Testing mp5 at 2016-11-01 01:07:54
 
-"What is written without effort is, in general, read without pleasure." ~ Samuel Johnson
+"I think it's hacky, but maybe it's just good." ~ Sean Massung
 
 Setting up test environment...
 Compiling...
@@ -40,29 +40,29 @@ test_clockwiseRotate_1 . . [1 pts] - FAILED
 test_clockwiseRotate_2 . . [1 pts] - FAILED
 test_clockwiseRotate_3 . . [2 pts] - FAILED
 test_clockwiseRotate_4 . . [2 pts] - FAILED
-test_prune_1 . . . . . . . [2 pts] - FAILED
-test_prune_2 . . . . . . . [3 pts] - FAILED
-test_prune_3 . . . . . . . [2 pts] - FAILED
-test_prune_4 . . . . . . . [5 pts] - FAILED
+test_prune_1 . . . . . . . [2 pts] - passed
+test_prune_2 . . . . . . . [3 pts] - passed
+test_prune_3 . . . . . . . [2 pts] - passed
+test_prune_4 . . . . . . . [5 pts] - passed
 test_prune_copy  . . . . . [2 pts] - passed
 test_prune_rotate  . . . . [2 pts] - FAILED
-test_prune_getPixel  . . . [3 pts] - FAILED
+test_prune_getPixel  . . . [3 pts] - passed
 test_pruneSize_1 . . . . . [2 pts] - passed
 test_pruneSize_2 . . . . . [2 pts] - FAILED
-test_pruneSize_3 . . . . . [2 pts] - FAILED
-test_pruneSize_4 . . . . . [2 pts] - FAILED
+test_pruneSize_3 . . . . . [2 pts] - passed
+test_pruneSize_4 . . . . . [2 pts] - passed
 test_pruneSize_5 . . . . . [2 pts] - FAILED
 test_idealPrune_1  . . . . [2 pts] - FAILED
 test_idealPrune_2  . . . . [3 pts] - FAILED
-test_idealPrune_3  . . . . [2 pts] - passed
+test_idealPrune_3  . . . . [2 pts] - FAILED
 test_idealPrune_4  . . . . [5 pts] - FAILED
 val_clockwiseRotate (asan) [2 pts] - FAILED
-val_prune (asan) . . . . . [4 pts] - FAILED
+val_prune (asan) . . . . . [4 pts] - passed
 val_idealPrune (asan)  . . [3 pts] - FAILED
-test_const_correctness . . [4 pts] - passed
+test_const_correctness . . [4 pts] - FAILED
 
 
 Total score...
 ================================================================
-TOTAL SCORE: 50
+TOTAL SCORE: 67
 
