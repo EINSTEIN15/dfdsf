@@ -1,0 +1,108 @@
+CD to .. 
+/home/mattox/repos/fa16-exam1-grading/submissions/nknipfe2
+######################################################
+##                                                  ##
+##     Grading question exam-1-code-isotriangle     ##
+##                                                  ##
+######################################################
+Grader dir is /home/mattox/repos/fa16-exam1-grading/code-grading/scripts
+qid is exam-1-code-isotriangle
+shape is isotriangle
+test_dir is /home/mattox/repos/fa16-exam1-grading/code-grading/scripts/tests/isotriangle
+fullTmpDir = /home/mattox/repos/fa16-exam1-grading/submissions/nknipfe2/grade-isotriangle.Iq2
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function   -c -o isotriangle.o isotriangle.cpp
+:: Compiled successfully!
+:: Compiling provided code...
+
+:: Compiling test_constructor_unique_side.
+:: Running test_constructor_unique_side.
+Constructing IsoTriangle with unique_side=10 and common_side=20
+Expected: IsoTriangle(unique_side=10, common_side=?)
+Got:      IsoTriangle(unique_side=20, common_side=10)
+:: Failed test_constructor_unique_side.
+
+:: Compiling test_constructor_common_side.
+:: Running test_constructor_common_side.
+Constructing IsoTriangle with unique_side=10 and common_side=20
+Expected: IsoTriangle(unique_side=?, common_side=20)
+Got:      IsoTriangle(unique_side=20, common_side=10)
+:: Failed test_constructor_common_side.
+
+:: Compiling test_default_constructor_unique_side.
+:: Running test_default_constructor_unique_side.
+Constructing default IsoTriangle
+Expected: IsoTriangle(unique_side=1, common_side=?)
+Got:      IsoTriangle(unique_side=1, common_side=4)
+:: Passed test_default_constructor_unique_side.
+
+:: Compiling test_default_constructor_common_side.
+:: Running test_default_constructor_common_side.
+Constructing default IsoTriangle
+Expected: IsoTriangle(unique_side=?, common_side=4)
+Got:      IsoTriangle(unique_side=1, common_side=4)
+:: Passed test_default_constructor_common_side.
+
+:: Compiling test_default_height.
+:: Running test_default_height.
+Constructing default IsoTriangle
+Expected: height() = 3.96863
+Got:      height() = 3.87298
+:: Failed test_default_height.
+
+:: Compiling test_focus_height_1.
+:: Running test_focus_height_1.
+Constructing IsoTriangle with unique_side=1 and common_side=1
+Expected: height() = 0.86603
+Got:      height() = 0
+:: Failed test_focus_height_1.
+
+:: Compiling test_focus_height_2.
+:: Running test_focus_height_2.
+Constructing IsoTriangle with unique_side=1 and common_side=10
+Expected: height() = 9.98749
+Got:      height() = -nan
+:: Failed test_focus_height_2.
+
+:: Compiling test_focus_height_3.
+:: Running test_focus_height_3.
+Constructing IsoTriangle with unique_side=5 and common_side=4
+Expected: height() = 3.1225
+Got:      height() = 4.58258
+:: Failed test_focus_height_3.
+
+:: Compiling test_focus_height_4.
+:: Running test_focus_height_4.
+Constructing IsoTriangle with unique_side=3 and common_side=2
+Expected: height() = 1.32288
+Got:      height() = 2.82843
+:: Failed test_focus_height_4.
+
+Failed tests:
+- test_constructor_unique_side
+- test_constructor_common_side
+- test_default_height
+- test_focus_height_1
+- test_focus_height_2
+- test_focus_height_3
+- test_focus_height_4
+
+Grade for question exam-1-code-isotriangle: 30/100
+
+
+~ ~ ~
+
+Grade: 30
+
+Details:
+test,grade
+isotriangle_compiled,1
+isotriangle_test_constructor_unique_side,0
+isotriangle_test_constructor_common_side,0
+isotriangle_test_default_constructor_unique_side,1
+isotriangle_test_default_constructor_common_side,1
+isotriangle_test_default_height,0
+isotriangle_test_focus_height_1,0
+isotriangle_test_focus_height_2,0
+isotriangle_test_focus_height_3,0
+isotriangle_test_focus_height_4,0

@@ -1,0 +1,103 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam3-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam3-grading/code-grading/scripts
+qid is queue-01
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam3-grading/code-grading/scripts/tests/queue-01/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam3-grading/submissions/nknipfe2/grade-.HTP
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function solution_queue.cpp
+solution_queue.cpp: In function ‘int get(std::queue<int>&, int)’:
+solution_queue.cpp:21:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(q1.size()!=0 and q1.size()>=pos)
+                       ~~~~~~~~~^~~~~
+:: Compiled successfully!
+:: Compiling provided code...
+
+:: Compiling test_first.
+:: Running test_first.
+Status is 'PASSED'
+:: Passed test_first.
+
+:: Compiling test_first_preserve.
+:: Running test_first_preserve.
+Status is 'PASSED'
+:: Passed test_first_preserve.
+
+:: Compiling test_mid.
+:: Running test_mid.
+Status is 'PASSED'
+:: Passed test_mid.
+
+:: Compiling test_mid_preserve.
+:: Running test_mid_preserve.
+Status is 'PASSED'
+:: Passed test_mid_preserve.
+
+:: Compiling test_end.
+:: Running test_end.
+Status is 'PASSED'
+:: Passed test_end.
+
+:: Compiling test_end_preserve.
+:: Running test_end_preserve.
+Status is 'PASSED'
+:: Passed test_end_preserve.
+
+:: Compiling test_one.
+:: Running test_one.
+Status is 'PASSED'
+:: Passed test_one.
+
+:: Compiling test_one_preserve.
+:: Running test_one_preserve.
+Status is 'PASSED'
+:: Passed test_one_preserve.
+
+:: Compiling test_neg.
+:: Running test_neg.
+Status is 'PASSED'
+:: Passed test_neg.
+
+:: Compiling test_neg_preserve.
+:: Running test_neg_preserve.
+Status is 'PASSED'
+:: Passed test_neg_preserve.
+
+:: Compiling test_greater.
+:: Running test_greater.
+Status is 'PASSED'
+:: Passed test_greater.
+
+:: Compiling test_greater_preserve.
+:: Running test_greater_preserve.
+Status is 'PASSED'
+:: Passed test_greater_preserve.
+
+Grade for question : 100/100
+
+
+~ ~ ~
+
+Grade: 100
+
+Details:
+test,grade
+_compiled,1
+_test_first,1
+_test_first_preserve,1
+_test_mid,1
+_test_mid_preserve,1
+_test_end,1
+_test_end_preserve,1
+_test_one,1
+_test_one_preserve,1
+_test_neg,1
+_test_neg_preserve,1
+_test_greater,1
+_test_greater_preserve,1

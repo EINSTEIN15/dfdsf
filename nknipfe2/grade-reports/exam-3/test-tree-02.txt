@@ -1,0 +1,58 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam3-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam3-grading/code-grading/scripts
+qid is tree-02
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam3-grading/code-grading/scripts/tests/tree-02/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam3-grading/submissions/nknipfe2/grade-.P04
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function solution_tree.cpp
+:: Compiled successfully!
+:: Compiling provided code...
+
+:: Compiling test_one.
+solution_queue.cpp: In function ‘int get(std::queue<int>&, int)’:
+solution_queue.cpp:21:32: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+   if(q1.size()!=0 and q1.size()>=pos)
+                       ~~~~~~~~~^~~~~
+:: Running test_one.
+Status is 'PASSED'
+:: Passed test_one.
+
+:: Compiling test_two.
+:: Running test_two.
+Status is 'FAILED'
+:: Failed test_two.
+
+:: Compiling test_three.
+:: Running test_three.
+Status is 'PASSED'
+:: Passed test_three.
+
+:: Compiling test_seven.
+:: Running test_seven.
+Status is 'PASSED'
+:: Passed test_seven.
+
+Failed tests:
+- test_two
+
+Grade for question : 80/100
+
+
+~ ~ ~
+
+Grade: 80
+
+Details:
+test,grade
+_compiled,1
+_test_one,1
+_test_two,0
+_test_three,1
+_test_seven,1
