@@ -1,0 +1,31 @@
+Exam 3 report for Nathan Knipfer
+================================
+
+Scores
+------
+
+  Problem          Points
+  -------------- --------
+  mc-cpp3-001c        0.0
+  mc-cpp3-002a        4.0
+  mc-cpp3-003c        0.0
+  mc-cpp3-004h        4.0
+  mc-cpp3-005d        0.0
+  mc-cpp3-006e        4.0
+  mc-cpp3-007g        4.0
+  mc-cpp3-008f        0.0
+  queue-01            9.0
+  tree-02             7.2
+
+Each coding question was worth 9 points.
+
+Total score: 32.2/50 (64.4%)
+
+Code Problem Test Output
+------------------------
+
+See `test-queue.txt` and `test-tree.txt` for autograder test outputs.
+
+Questions / problems of a specific nature, please email mattox.
+Questions / problems that look like they would have affected a lot of
+people, please post on Piazza.
