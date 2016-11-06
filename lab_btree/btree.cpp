@@ -35,7 +35,16 @@ V BTree<K, V>::find(const BTreeNode* subroot, const K& key) const
 
     /* If first_larger_idx is a valid index and the key there is the key we
      * are looking for, we are done. */
+    // if(subroot->elements[first_larger_idx].key==key)
+    // {
+	//   return subroot->elements[key].value;
+    // }
+   
 
+    
+
+    
+      
     /* Otherwise, we need to figure out which child to explore. For this we
      * can actually just use first_larger_idx directly. E.g.
      * | 1 | 5 | 7 | 8 |
@@ -46,7 +55,17 @@ V BTree<K, V>::find(const BTreeNode* subroot, const K& key) const
      * a leaf and we didn't find the key in it, then we have failed to find it
      * anywhere in the tree and return the default V.
      */
+    // else if(subroot->is_leaf!=true)
+    // {
+    //return find(subroot->children[first_larger_idx],key);
+    // }
+    // else
+    // {
+
     return V();
+
+    //}
+
 }
 
 /**
@@ -143,6 +162,36 @@ void BTree<K, V>::split_child(BTreeNode* parent, size_t child_idx)
     auto mid_child_itr = child->children.begin() + mid_child_idx;
 
     /* TODO Your code goes here! */
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 /**
@@ -152,7 +201,7 @@ void BTree<K, V>::split_child(BTreeNode* parent, size_t child_idx)
  * Note: Original solution used std::lower_bound, but making the students
  * write an equivalent seemed more instructive.
  */
-template <class K, class V>
+ template <class K, class V>
 void BTree<K, V>::insert(BTreeNode* subroot, const DataPair& pair)
 {
     /* There are two cases to consider.
@@ -166,4 +215,13 @@ void BTree<K, V>::insert(BTreeNode* subroot, const DataPair& pair)
 
     size_t first_larger_idx = insertion_idx(subroot->elements, pair);
     /* TODO Your code goes here! */
+
+
+
+
+
+
+
+
+
 }
