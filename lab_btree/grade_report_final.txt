@@ -1,0 +1,124 @@
+Grading r46407 by nknipfe2 committed on Sun Nov  6 15:25:22 CST 2016
+Monad Autograder
+Testing lab_btree at 2016-11-07 00:48:44
+
+"I think I may have made a student cry during my exam..." ~ Joe DiFebo
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+test_insertion_idx_emp  . . . [10 pts] - passed
+test_insertion_idx_small  . . [10 pts] - passed
+test_insertion_idx_logn . . . [10 pts] - FAILED: unit_tests.cpp:118: Runtime was larger than O(logn)
+test_btree3_small (asan)  . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 5]
+test_btree3_large_seq . . . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 1]
+test_btree3_large_rand  . . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+test_btree64_large_seq  . . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 1]
+test_btree64_large_rand . . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+test_btree128_med_rand (asan) [10 pts] - FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+test_btree5_strings . . . . . [10 pts] - FAILED: unit_tests.cpp:57: [ret => ] != [key_val.second => skye]
+
+
+Total score...
+================================================================
+TOTAL SCORE: 20
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+test_insertion_idx_logn [10 points]
+Result: FAILED: unit_tests.cpp:118: Runtime was larger than O(logn)
+Took 8038ms (10000ms timeout)
+Output:
+----------------------------------------------------------------
+Input size 10: 749470 iterations in 1000 ms for an average of 1.33428 us per call
+Input size 100: 373360 iterations in 1000 ms for an average of 2.6784 us per call
+Input size 1000: 55290 iterations in 1000 ms for an average of 18.0877 us per call
+Input size 10000: 6300 iterations in 1000 ms for an average of 158.828 us per call
+Input size 100000: 630 iterations in 1010 ms for an average of 1603.64 us per call
+Fitting time: O(1)
+RMS Residual: 645.067
+Fitting time: O(logn)
+RMS Residual: 407.632
+Fitting time: O(n)
+RMS Residual: 1.17
+Fitting time: O(nlogn)
+RMS Residual: 10.891
+Fitting time: O(n^2)
+RMS Residual: 52.9496
+Fitting time: O(n^3)
+RMS Residual: 58.3549
+Fitting time: O(e^n)
+RMS Residual: -nan
+Fitting time: O(never)
+RMS Residual: -nan
+Detected best time: O(n)
+Best RMS Residual: 1.17
+
+----------------------------------------------------------------
+test_btree3_small (run under asan) [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 5]
+Took unknown time (5000ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_btree3_small [worth 10 points, output below]
+Result: FAILED:
+unit_tests.cpp:57: [ret => 0] != [key_val.second => 5]
+
+----------------------------------------------------------------
+test_btree3_large_seq [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 1]
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_btree3_large_rand [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+Took 1ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_btree64_large_seq [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 1]
+Took 14ms (1500ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_btree64_large_rand [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+Took 10ms (1500ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+test_btree128_med_rand (run under asan) [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+Took unknown time (5500ms timeout)
+Output:
+----------------------------------------------------------------
+Running test_btree128_med_rand [worth 10 points, output below]
+Result: FAILED:
+unit_tests.cpp:57: [ret => 0] != [key_val.second => 981077384]
+
+----------------------------------------------------------------
+test_btree5_strings [10 points]
+Result: FAILED: unit_tests.cpp:57: [ret => ] != [key_val.second => skye]
+Took 0ms (1000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 20
+
