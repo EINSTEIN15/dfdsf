@@ -1,0 +1,41 @@
+Grading r48216 by nknipfe2 committed on Tue Nov  8 19:15:40 CST 2016
+Monad Autograder
+Testing mp6.1 at 2016-11-09 00:24:02
+
+"For humans, honesty is a matter of degree. Engineers are always honest in matters of technology and human relationships. That's why it's a good idea to keep engineers away from customers, romantic interests, and other people who can't handle the truth." ~ Scott Adams
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testSmallerDimVal . . . . . [4 pts] - passed
+testShouldReplace . . . . . [4 pts] - passed
+testLinearCtor_1_10 . . . . [6 pts] - passed
+testLinearCtor_3_31 . . . . [6 pts] - passed
+testLinearCtor_2_14 . . . . [6 pts] - passed
+testLinearNNS_1_10  . . . . [6 pts] - FAILED
+testLinearNNS_3_31  . . . . [6 pts] - FAILED
+testLinearNNS_2_14  . . . . [6 pts] - FAILED
+testDeceptiveNNOneLevelCtor [4 pts] - FAILED
+testDeceptiveNNOneLevelNNS  [4 pts] - FAILED
+testMinesCtor . . . . . . . [4 pts] - FAILED
+testMinesNNS  . . . . . . . [4 pts] - FAILED
+testDeceptiveMinesCtor  . . [4 pts] - FAILED
+testDeceptiveMinesNNS . . . [4 pts] - FAILED
+testTieBreakingCtor . . . . [4 pts] - FAILED
+testTieBreakingNNS  . . . . [4 pts] - FAILED
+testLeftRecurseCtor . . . . [4 pts] - FAILED
+testLeftRecurseNNS  . . . . [4 pts] - FAILED
+testRandom1Ctor . . . . . . [4 pts] - FAILED
+testRandom1NNS  . . . . . . [4 pts] - FAILED
+testRandom2Ctor . . . . . . [4 pts] - FAILED
+testRandom2NNS  . . . . . . [4 pts] - FAILED
+
+
+Total score...
+================================================================
+TOTAL SCORE: 26
+
