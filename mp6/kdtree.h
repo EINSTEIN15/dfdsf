@@ -18,9 +18,10 @@
 #define _KDTREE_H_
 
 #include <vector>
+#include <algorithm>
 #include "coloredout.h"
 #include "point.h"
-
+//using std::swap;
 using std::vector;
 using std::string;
 using std::ostream;
@@ -248,8 +249,17 @@ class KDTree
      * @todo Add your helper functions here.
      */
 
+
+    void KDTreeHelper( vector<Point<Dim>>myvector,int L1,int L2, int d);
+    int Pivot( vector<Point<Dim>>&myvector, int L1, int L2, int pivotpoint);
+    void quickselect( vector<Point<Dim>> myvector,int L1,int L2, int curDim);
+
+
+
+
 };
 
 #include "kdtree.cpp"
 #include "kdtree_extras.cpp"
+#include <algorithm>
 #endif
