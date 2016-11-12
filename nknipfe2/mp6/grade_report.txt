@@ -1,8 +1,8 @@
-Grading r48926 by enx-cs225autograder committed on Thu Nov 10 00:41:49 CST 2016
+Grading r49302 by enx-cs225autograder committed on Fri Nov 11 00:43:36 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-11 00:31:42
+Testing mp6 at 2016-11-12 00:28:55
 
-"That's legit as shit." ~ Rick Barber
+"Be careful about using the following code -- I've only proven that it works, I haven't tested it." ~ Donald Knuth
 
 Setting up test environment...
 Compiling...
