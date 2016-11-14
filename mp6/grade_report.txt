@@ -1,8 +1,8 @@
-Grading r49760 by enx-cs225autograder committed on Sat Nov 12 00:40:13 CST 2016
+Grading r50233 by enx-cs225autograder committed on Sun Nov 13 00:37:34 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-13 00:25:51
+Testing mp6 at 2016-11-14 01:00:31
 
-"I did respond to your email, but I might have forgotten to hit send." ~ Cinda Heeren
+"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
 
 Setting up test environment...
 Compiling...
