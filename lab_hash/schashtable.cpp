@@ -68,7 +68,10 @@ void SCHashTable<K, V>::insert(K const& key, V const& value)
 template <class K, class V>
 void SCHashTable<K, V>::remove(K const& key)
 {
-    typename list<pair<K, V>>::iterator it;
+
+
+  
+  typename list<pair<K, V>>::iterator it;
     /**
      * @todo Implement this function.
      *
@@ -76,13 +79,36 @@ void SCHashTable<K, V>::remove(K const& key)
      * erase() function on std::list!
      */
 
-    (void) key; // prevent warnings... When you implement this function, remove this line.
-}
+ 
+
+
+
+
+
+
+
+  //it looks like the find function is basically the same. Ask about the hash function. location in the table where the key should be??
+	 size_t i=hash(key,size);
+  for(it=table[i].begin();it!=table[i].end();it++)
+    {
+      if(it->first==key)
+	{
+	  table[i].erase(it);
+	  break;
+
+	}
+    }
+
+	
+    }
+
+
+ //    (void) key; // prevent warnings... When you implement this function, remove this line.}
 
 template <class K, class V>
 V SCHashTable<K, V>::find(K const& key) const
 {
-    size_t idx = hash(key, size);
+  size_t idx = hash(key,size);
     typename list<pair<K, V>>::iterator it;
     for (it = table[idx].begin(); it != table[idx].end(); it++) {
         if (it->first == key)
@@ -144,4 +170,24 @@ void SCHashTable<K, V>::resizeTable()
      *
      * @hint Use findPrime()!
      */
+    //maybe the copy constructor thing has a similar form that this needs.
+    size_t othersize= findPrime(size*2);
+    
+    std::list<std::pair<K, V>>* newtable;
+
+    // SCHashTable    newtable(othersize);
+        newtable = new list<pair<K, V>>[othersize];
+    for(size_t i=0;i<size;i++)
+      {
+	for(it=table[i].begin();it!=table[i].end();it++)
+	  {
+	    int idx = hash( it->first, othersize );
+	    pair<K,V> p( it->first, it->second);
+	    newtable[idx].push_back(p);
+	  }
+      }     
+	delete[] table;
+	table=newtable;
+	size=othersize;
+
 }

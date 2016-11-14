@@ -100,6 +100,7 @@ class LogfileParser
      * you construct a unique, string key to find information for a
      * given customer and url?
      */
+    //    LPHashTable<std::string, std::string> table;
     LPHashTable<std::string, time_t> whenVisitedTable;
 
     /**

@@ -86,8 +86,18 @@ bool LogfileParser::hasVisited(const string& customer, const string& url) const
      * @todo Implement this function.
      */
 
-    (void) customer; // prevent warnings... When you implement this function, remove this line.
-    (void) url;      // prevent warnings... When you implement this function, remove this line.
+  //    (void) customer; // prevent warnings... When you implement this function, remove this line.
+  // (void) url;      // prevent warnings... When you implement this function, remove this line.
+
+  //  auto it;
+  //  string key
+
+
+
+
+
+
+
 
     return true; // replaceme
 }
