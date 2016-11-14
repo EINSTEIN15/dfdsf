@@ -97,6 +97,7 @@ class SCHashTable : public HashTable<K, V>
      * each list is a standard pair of K (key) and V (value).
      */
     std::list<std::pair<K, V>>* table;
+    //    std::list<std::pair<K, V>>* newtable;
 
     // inherited from HashTable
     virtual void resizeTable();

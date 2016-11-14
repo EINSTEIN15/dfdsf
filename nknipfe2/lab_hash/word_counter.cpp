@@ -15,24 +15,47 @@ using std::istringstream;
 using std::cout;
 using std::endl;
 
-template <template <class K, class V> class Dict>
-WordFreq<Dict>::WordFreq(const string& infile)
+template <template <class K, class V> class Htable>
+WordFreq<Htable>::WordFreq(const string& infile)
     : filename(infile)
 {
     /* nothing */
 }
 
-template <template <class K, class V> class Dict>
-vector<pair<string, int>> WordFreq<Dict>::getWords(int threshold) const
+template <template <class K, class V> class Htable>
+vector<pair<string, int>> WordFreq<Htable>::getWords(int threshold) const
 {
     TextFile infile(filename);
+    Htable<string,int>table1(256);
+    while(infile.good())
+      {
+      string word=infile.getNextWord();
+      
+	
+	  table1[word]++;
+
+	
+
+      }
     vector<pair<string, int>> ret;
     /**
      * @todo Implement this function.
      * @see char_counter.cpp if you're having trouble.
      */
-
-    (void) threshold; // prevent warnings... When you implement this function, remove this line.
-
+    typename Htable<string,int>:: iterator it;
+for (it = table1.begin(); it != table1.end(); it++) 
+  {
+        if (it->second >= threshold)
+            ret.push_back(*it);
+    }
     return ret;
+
+
+
+
+
+
+    // (void) threshold; // prevent warnings... When you implement this function, remove this line.
+
+    //return ret;
 }
