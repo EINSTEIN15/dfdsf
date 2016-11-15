@@ -5,6 +5,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <algorithm>
+#include <iostream>
+using namespace std;
+
 
 template <int Dim>
 bool KDTree<Dim>::smallerDimVal(const Point<Dim>& first,
@@ -67,7 +70,7 @@ KDTree<Dim>::KDTree(const vector<Point<Dim>>& newPoints)
   points=newPoints;
  
    
-  KDTreeHelper(points,0,newPoints.size(),0);
+  KDTreeHelper(points,0,newPoints.size()-1,0);
     
 }
 
@@ -78,28 +81,51 @@ Point<Dim> KDTree<Dim>::findNearestNeighbor(const Point<Dim>& query) const
     /**
      * @todo Implement this function!
      */
-    return Point<Dim>();
+  return NNHelper(0,points.size()-1,0,query);
+}
+
+
+
+template <int Dim>
+Point<Dim> KDTree<Dim>::NNHelper(int L1,int L2,int curDim,const Point<Dim>& query) const 
+{
+  Point <Dim> currbest,target;
+  int median=(L1+L2)/2;
+  int splitdistance;
+  int distance2;
+  target=points[median];
+  if(smallerDimVal(target,query,curDim)==true)
+    {
+      currbest=NNHelper(L1,median-1,curDim,query);
+    }
+  if(smallerDimVal(target,query,curDim)==false)
+    {
+      currbest=NNHelper(median+1,L2,curDim,query);
+    }
+
+
+  if(shouldReplace(query,currbest,target))
+    {
+      currbest=target;
+    }
+  return currbest;
 }
 
 template <int Dim>
 void KDTree<Dim>::KDTreeHelper( vector<Point<Dim>> myvector, int L1, int L2,int d)
-{/*
+{
   int median=(L1+L2)/2;
-  if(L1==L2)
+  if(L1>L2)
     {
       return;
     }
-  quickselect(myvector,L1,L2,d);
-  if(median<L2)
-    {
+ points[median]= quickselect(myvector,L1,L2,d);
+  
+    
       KDTreeHelper(myvector,median+1,L2,(d+1)%Dim);
-
-    }
-  else if(median>L1)
-    {
       KDTreeHelper(myvector,L1,median-1,(d+1)%Dim);
 
-    }
+    
 
   
 
@@ -107,46 +133,54 @@ void KDTree<Dim>::KDTreeHelper( vector<Point<Dim>> myvector, int L1, int L2,int 
 }
 
 template <int Dim>
-void KDTree<Dim>::quickselect( vector<Point<Dim>>myvector, int L1, int L2, int curDim)
+Point <Dim> KDTree<Dim>::quickselect( vector<Point<Dim>>myvector, int L1, int L2, int curDim)
 {
+
+  
+  int x= partition(myvector,L1,L2,curDim);
+  int n=(L1+L2)/2;
   if(L1==L2)
     {
-      return;
+      return myvector[L1];
     }
  
-  int pivotpoint= L1+floor((rand()%(L2-L1+1)));
-  pivotpoint=Pivot(myvector,L1,L2,pivotpoint);
- 
-   if(curDim<pivotpoint)
+  //  int x= partition(myvector,L1,L2,curDim);
+  if(n==x)
     {
-      return quickselect(myvector,L1,pivotpoint-1,curDim);
+      return myvector[n];
+
+    }
+  if(n<x)
+    {
+      return quickselect(myvector,L1,x-1,n);
 
     }
   else
     {
-      return quickselect(myvector,pivotpoint+1,L2,curDim);
+
+      return quickselect(myvector,x+1,L2,n);
 
     }
- */
 
 }
-
+//pseudocode on wikipedia for this
 template <int Dim>
-    int KDTree<Dim>::Pivot( vector<Point<Dim>> &myvector, int L1, int L2,int pivotpoint)
+int KDTree<Dim>:: partition( vector<Point<Dim>> &myvector, int L1, int L2,int curDim)
 {
-  /*int pivotindex= L1-1;
-  // swap(myvector[pivotindex],myvector[L2]);
-  for(int i=L1;i<L2;i++)
+  Point<Dim> pivotpoint = myvector[(L1+L2)/2];
+  swap(myvector[(L1+L2)/2],myvector[L2]);
+  int si=L1;
+  int x=L1;
+  while(x<L2)
     {
-      if(myvector[i]<myvector[L2])
+      if(myvector[x]<pivotpoint)
 	{
-	  pivotindex++;
-	  //	  swap(myvector[pivotindex],myvector[i]);
-	  }
-    }
+	  swap(myvector[si],myvector[x]);
+	  si++;
+	}
+      x++;
+}
+  swap(myvector[L2],myvector[si]);
+  return si;
 
-  pivotindex++;
-  //  swap(myvector[pivotindex],myvector[L2]);
-  return pivotindex;
-  */
 }
