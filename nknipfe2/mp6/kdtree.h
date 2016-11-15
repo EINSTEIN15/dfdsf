@@ -240,6 +240,9 @@ class KDTree
 
     /** Helper function for grading */
     int getPrintData(int low, int high) const;
+    
+    Point<Dim> NNHelper(int L1,int L2,int curDim,const Point<Dim>& query) const;
+
 
     /** Helper function for grading */
     void printTree(int low, int high, std::vector<std::string>& output,
@@ -251,8 +254,8 @@ class KDTree
 
 
     void KDTreeHelper( vector<Point<Dim>>myvector,int L1,int L2, int d);
-    int Pivot( vector<Point<Dim>>&myvector, int L1, int L2, int pivotpoint);
-    void quickselect( vector<Point<Dim>> myvector,int L1,int L2, int curDim);
+    int partition( vector<Point<Dim>>&myvector, int L1, int L2, int curDim);
+   Point <Dim>  quickselect( vector<Point<Dim>> myvector,int L1,int L2, int curDim);
 
 
 
