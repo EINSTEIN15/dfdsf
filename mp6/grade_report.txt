@@ -1,8 +1,8 @@
-Grading r50233 by enx-cs225autograder committed on Sun Nov 13 00:37:34 CST 2016
+Grading r51581 by nknipfe2 committed on Mon Nov 14 21:25:17 CST 2016
 Monad Autograder
-Testing mp6 at 2016-11-14 01:00:31
+Testing mp6 at 2016-11-15 00:29:02
 
-"I can calculate the motions of the heavenly bodies, but not the madness of people." ~ Isaac Newton
+"The problem is not enough early" ~ Jordi Paris Ferrer
 
 Setting up test environment...
 Compiling...
