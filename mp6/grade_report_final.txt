@@ -1,0 +1,229 @@
+Grading r52254 by nknipfe2 committed on Tue Nov 15 20:53:27 CST 2016
+Monad Autograder
+Testing mp6 at 2016-11-16 00:26:49
+
+"I never code in C++. But when I do, I use polymorphism and rand() functions." ~ Chaitanya Datye
+
+Setting up test environment...
+Compiling...
+================================================================
+
+
+Running tests...
+================================================================
+testSmallerDimVal . . . . . [3 pts]  - passed
+testShouldReplace . . . . . [3 pts]  - passed
+testLinearCtor_1_10 . . . . [4 pts]  - passed
+testLinearCtor_3_31 . . . . [4 pts]  - passed
+testLinearCtor_2_14 . . . . [4 pts]  - passed
+testLinearNNS_1_10  . . . . [4 pts]  - FAILED: Segmentation fault
+testLinearNNS_3_31  . . . . [4 pts]  - FAILED: Segmentation fault
+testLinearNNS_2_14  . . . . [4 pts]  - FAILED: Segmentation fault
+testDeceptiveNNOneLevelCtor [4 pts]  - passed
+testDeceptiveNNOneLevelNNS  [3 pts]  - FAILED: Segmentation fault
+testMinesCtor . . . . . . . [3 pts]  - passed
+testMinesNNS  . . . . . . . [4 pts]  - FAILED: ./point.cpp:75: Hit mine {7, -6}
+testDeceptiveMinesCtor  . . [3 pts]  - FAILED: Segmentation fault
+testDeceptiveMinesNNS . . . [5 pts]  - FAILED: Segmentation fault
+testTieBreakingCtor . . . . [3 pts]  - FAILED: unit_tests.cpp:300: Assertion (output == readFile("soln_testTieBreakingCtor.out")) failed
+testTieBreakingNNS  . . . . [3 pts]  - FAILED: Segmentation fault
+testLeftRecurseCtor . . . . [3 pts]  - FAILED: unit_tests.cpp:355: Assertion (output == readFile("soln_testLeftRecurseCtor.out")) failed
+testLeftRecurseNNS  . . . . [3 pts]  - FAILED: ./point.cpp:75: Hit mine {0, 2.05531e-321, 6.01347e-154}
+testRandom1Ctor . . . . . . [3 pts]  - FAILED: unit_tests.cpp:420: Assertion (output == readFile("soln_testRandom1Ctor.out")) failed
+testRandom1NNS  . . . . . . [3 pts]  - FAILED: ./point.cpp:75: Hit mine {1, 5, 1}
+testRandom2Ctor . . . . . . [3 pts]  - FAILED: Segmentation fault
+testRandom2NNS  . . . . . . [3 pts]  - FAILED: Segmentation fault
+testCheckeredMosaic . . . . [12 pts] - FAILED: unit_tests.cpp:482: ERROR: Returned NULL MosaicCanvas when shouldn't have
+testPrimaryColorMosaic  . . [6 pts]  - FAILED: unit_tests.cpp:516: ERROR: Returned NULL MosaicCanvas when shouldn't have
+testRandomMosaic  . . . . . [6 pts]  - FAILED: unit_tests.cpp:578: ERROR: Returned NULL MosaicCanvas when shouldn't have
+
+
+Total score...
+================================================================
+TOTAL SCORE: 25
+
+
+
+Detailed test output...
+================================================================
+----------------------------------------------------------------
+testLinearNNS_1_10 [4 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testLinearNNS_3_31 [4 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testLinearNNS_2_14 [4 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDeceptiveNNOneLevelNNS [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testMinesNNS [4 points]
+Result: FAILED: ./point.cpp:75: Hit mine {7, -6}
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDeceptiveMinesCtor [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testDeceptiveMinesNNS [5 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testTieBreakingCtor [3 points]
+Result: FAILED: unit_tests.cpp:300: Assertion (output == readFile("soln_testTieBreakingCtor.out")) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+              (0,                  
+               0,                  
+            __ 0)__                
+         __/       \__             
+      (0,             (100,        
+       50,             0,          
+       0)              0)          
+     /   \           /   \         
+  (0,     (0,     (50,    (100,    
+   0,      50,     0,      100,    
+   50)     50)     50)     0)      
+    \     / \     / \     / \      
+    (0, (0, (0, (50,(100(50,(50,   
+     0,  100 100 0,  0,  50, 50,   
+     100 0)  100 0)  100 0)  50)   
+
+----------------------------------------------------------------
+testTieBreakingNNS [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testLeftRecurseCtor [3 points]
+Result: FAILED: unit_tests.cpp:355: Assertion (output == readFile("soln_testLeftRecurseCtor.out")) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+              (3,                  
+               1,                  
+            __ 10)_                
+         __/       \__             
+      (3,             (12,         
+       1,              12,         
+       10)             12)         
+     /   \           /   \         
+  (2,     (4,     (10,    (13,     
+   0,      3,      10,     13,     
+   8)      0)      10)     13)     
+            \       \       \      
+            (0,     (11,    (14,   
+             2,      11,     14,   
+             9)      11)     14)   
+
+----------------------------------------------------------------
+testLeftRecurseNNS [3 points]
+Result: FAILED: ./point.cpp:75: Hit mine {0, 2.05531e-321, 6.01347e-154}
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testRandom1Ctor [3 points]
+Result: FAILED: unit_tests.cpp:420: Assertion (output == readFile("soln_testRandom1Ctor.out")) failed
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+                              (6,                                  
+                               3,                                  
+                        ______ 1)______                            
+                 ______/               \______                     
+              (2,                             (7,                  
+               5,                              4,                  
+            __ 8)__                         __ 6)__                
+         __/       \__                   __/       \__             
+      {1,             (5,             (6,             (7,          
+       5,              9,              3,              5,          
+       1}              4)              4)              6)          
+     /   \           /   \           /   \           /   \         
+  (6,     (0,     (3,     (0,     (9,     (8,     (7,     (7,      
+   3,      4,      8,      6,      3,      2,      6,      5,      
+   1)      4)      3)      8)      2)      7)      2)      6)      
+            \               \               \       \       \      
+            (2,             (6,             (8,     (8,     (8,    
+             5,              6,              4,      6,      9,    
+             3)              5)              7)      2)      6)    
+
+----------------------------------------------------------------
+testRandom1NNS [3 points]
+Result: FAILED: ./point.cpp:75: Hit mine {1, 5, 1}
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testRandom2Ctor [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testRandom2NNS [3 points]
+Result: FAILED: Segmentation fault
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testCheckeredMosaic [12 points]
+Result: FAILED: unit_tests.cpp:482: ERROR: Returned NULL MosaicCanvas when shouldn't have
+Took 2ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testPrimaryColorMosaic [6 points]
+Result: FAILED: unit_tests.cpp:516: ERROR: Returned NULL MosaicCanvas when shouldn't have
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+----------------------------------------------------------------
+testRandomMosaic [6 points]
+Result: FAILED: unit_tests.cpp:578: ERROR: Returned NULL MosaicCanvas when shouldn't have
+Took 0ms (5000ms timeout)
+Output:
+----------------------------------------------------------------
+
+
+----------------------------------------------------------------
+Total score...
+================================================================
+TOTAL SCORE: 25
+
