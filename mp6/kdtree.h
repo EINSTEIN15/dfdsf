@@ -253,9 +253,9 @@ class KDTree
      */
 
 
-    void KDTreeHelper( vector<Point<Dim>>myvector,int L1,int L2, int d);
-    int partition( vector<Point<Dim>>&myvector, int L1, int L2, int curDim);
-   Point <Dim>  quickselect( vector<Point<Dim>> myvector,int L1,int L2, int curDim);
+    void KDTreeHelper( vector<Point<Dim>>&myvector,int L1,int L2, int d);
+    int partition( vector<Point<Dim>>&myvector, int L1, int L2,int k, int curDim);
+    Point<Dim> quickselect( vector<Point<Dim>> &myvector,int L1,int L2, int curDim,int k);
 
 
 
