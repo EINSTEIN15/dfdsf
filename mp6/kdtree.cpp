@@ -154,13 +154,7 @@ void KDTree<Dim>::KDTreeHelper( vector<Point<Dim>> &myvector, int L1, int L2,int
   int median=(L1+L2)/2;
   
   points[median]= quickselect(myvector,L1,L2,d,median);
-  
- 
-     KDTreeHelper(myvector,L1,median-1,(d+1)%Dim);
-   
-  
- 
-
+  KDTreeHelper(myvector,L1,median-1,(d+1)%Dim);
      KDTreeHelper(myvector,median+1,L2,(d+1)%Dim);
     
     
@@ -176,25 +170,26 @@ Point<Dim> KDTree<Dim>::quickselect( vector<Point<Dim>>&myvector, int L1, int L2
   //  int y=(L2 - L1 + 1) == 0 ? 1 : (L2 - L1 + 1);
   int median=(L1+L2)/2;
 int  pivotindex= partition(myvector,L1,L2,k,curDim);
-  
- while(L1<L2)
+ if(L1==L2)
    {
+     return myvector[L1];
+   }
+ 
     
       if(k==pivotindex)
 	{
-	  return myvector[pivotindex];
+	  return myvector[k];
 	}
       else if(k<pivotindex)
 	{
-	  L2=pivotindex-1;
+	  return quickselect(myvector,L1,pivotindex-1,curDim,median);
 	}
       else
 	{
-	  L1=pivotindex+1;
+	  return quickselect(myvector,pivotindex+1,L2,curDim,median);
 
 	}
-   }
-      return myvector[L1];
+   
     
  
 }
@@ -203,8 +198,8 @@ template <int Dim>
 int KDTree<Dim>:: partition( vector<Point<Dim>> &myvector, int L1, int L2,int k,int curDim)
 {
   
-  Point<Dim> pivotpoint = myvector[k];
-  swap(myvector[k],myvector[L2]);
+  Point<Dim> pivotpoint = myvector[(L1+L2)/2];
+  swap(myvector[(L1+L2)/2],myvector[L2]);
   int si=L1;
   int n=L1;
   // for(int n=L1;n<L2;n++)
