@@ -40,7 +40,12 @@ V BTree<K, V>::find(const BTreeNode* subroot, const K& key) const
 	//   return subroot->elements[key].value;
     // }
    
+    int i=0;
+    while((i<subroot->elements.size()) && (key>first_larger_idx))
+      {
+	i++;
 
+      }
     
 
     

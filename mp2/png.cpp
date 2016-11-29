@@ -133,7 +133,7 @@ PNG::PNG(string const & file_name)
 	_pixels = NULL;
 	_read_file(file_name);
 }
-
+eams
 PNG::PNG(PNG const & other)
 {
 	_copy(other);

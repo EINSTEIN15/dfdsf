@@ -1,4 +1,4 @@
-#ifndef _RGBAPIXEL_H
+#Ifndef _RGBAPIXEL_H
 #define _RGBAPIXEL_H
 
 

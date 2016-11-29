@@ -169,7 +169,7 @@ Point<Dim> KDTree<Dim>::quickselect( vector<Point<Dim>>&myvector, int L1, int L2
 {
   //  int y=(L2 - L1 + 1) == 0 ? 1 : (L2 - L1 + 1);
   int median=(L1+L2)/2;
-int  pivotindex= partition(myvector,L1,L2,k,curDim);
+int  pivotindex= partition(myvector,L1,L2,median,curDim);
  if(L1==L2)
    {
      return myvector[L1];
