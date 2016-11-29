@@ -7,7 +7,7 @@
  * @date Fall 2012
  */
 #include "filler.h"
-
+#include <vector>
 animation filler::dfs::fillSolid(PNG& img, int x, int y, RGBAPixel fillColor,
                                  int tolerance, int frameFreq)
 {
@@ -177,9 +177,9 @@ animation filler::fill(PNG& img, int x, int y, colorPicker& fillColor,
 
      
   OrderingStructure<RGBAPixel *> structure;
-  OrderingStructure<unsigned long int>xc;
-  OrderingStructure<unsigned long int>yc;
-    
+  vector <unsigned long int>xc;
+  vector<unsigned long int>yc;
+  vector<int> hi;
   
   int marked[300][300];
   //  bool marked[X1][Y1]=false;
@@ -209,17 +209,18 @@ unsigned long int y1=0;
     }
 
   structure.add(img(x,y));
-  xc.add(x);
-  yc.add(y);
+  xc.push_back(x);
+  yc.push_back(y);
   while(!structure.isEmpty())
     {
        currentpixel =structure.remove();
        // currentpixel->red=originalpixel.red;
        // currentpixel->green=originalpixel.green;
        //  currentpixel->blue=originalpixel.blue;
-      unsigned long      int xc2=xc.remove();
-      unsigned long      int yc2=yc.remove();
-
+       unsigned long      int xc2=xc.back();
+       unsigned long      int yc2=yc.back();
+       xc.pop_back();
+       yc.pop_back();
 
       //      cout<<"Here"<<endl;
       
@@ -233,26 +234,26 @@ tmp=(currentpixel->red-originalpixel.red)*(currentpixel->red-originalpixel.red)+
      if(xc2+1<img.width())
        {
 	 structure.add(img(xc2+1,yc2));
-	 xc.add(xc2+1);
-	 yc.add(yc2);
+	 xc.push_back(xc2+1);
+	 yc.push_back(yc2);
 		   }	   
        if(yc2+1<img.height())
 	 {
 	   structure.add(img(xc2,yc2+1));
-	   xc.add(xc2);
-	   yc.add(yc2+1);
+	   xc.push_back(xc2);
+	   yc.push_back(yc2+1);
 		     }
 	 if(xc2-1>0)
 	   {
 	     structure.add(img(xc2-1,yc2));
-	     xc.add(xc2-1);
-	     yc.add(yc2);
+	     xc.push_back(xc2-1);
+	     yc.push_back(yc2);
 	   }
 	       if(yc2-1>0)
 		 {
 		   structure.add(img(xc2,yc2-1));
-		   xc.add(xc2);
-		   yc.add(yc2-1);
+		   xc.push_back(xc2);
+		   yc.push_back(yc2-1);
 		 }
 	       
 	       framecount++;

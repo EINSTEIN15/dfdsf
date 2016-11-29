@@ -134,7 +134,7 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
    ListNode *tmp2=startPoint;
    ListNode *tmp3=endPoint->next;
    ListNode *tmp4=startPoint->prev;
-   
+   ListNode *tmp6;
    if (head==NULL)
      {
        return;
@@ -148,26 +148,34 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
        tmp4->next = tmp5;
        tmp->prev  = tmp2->next;
      }
-   */if(startPoint->prev==NULL && endPoint->next==NULL)
-     {
+   *///if(startPoint->prev==NULL && endPoint->next==NULL)
+   // {
 	 while(current!=tmp3)
 	   {
-	     spot = current->prev;
-	     current->prev = current->next;
-	     current->next = spot;              
+	    spot = current->prev;
+	    current->prev = current->next;
+	    current->next = spot;              
 	    current = current->prev;
        
 
            }
-	 	 if(spot!=NULL)
-	  {startPoint=spot->prev;}
-     }
-   
-   else 
-     {
+	  if(spot!=NULL)
+	    {startPoint=spot->prev;}
+	  if(startPoint==head && endPoint==tail)
+	    {tmp6=head;
+	      head=tail;
+	      tail=tmp6;
+	    }
+// 
 
-       while(current!=tmp3)
-	 {
+
+
+  
+     // else 
+		 // {
+		 /*
+		  while(current!=tmp3)
+		  {
 	   spot = current->prev;
 	   current->prev = current->next;
 	   current->next = spot;
@@ -183,18 +191,18 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
        tmp->prev  = tmp2->next;
 
 	 
+		 */
+
+
+
+       // }
 
 
 
 
-     }
 
 
-
-
-
-
-/*		  if(endPoint->next!=NULL || startPoint->prev!=NULL)
+	  /*		  if(endPoint->next!=NULL || startPoint->prev!=NULL)
 	   {
 	     tmp5=tmp3->prev;
 	     tmp2->prev =tmp->next;
@@ -202,7 +210,7 @@ void List<T>::reverse( ListNode*& startPoint,  ListNode*& endPoint)
 	     tmp4->next = tmp5;
 	     tmp->prev  = tmp2->next;
 	   }
-		 */
+	  */	 
 
  current=NULL;
  tmp4=NULL;
@@ -233,7 +241,7 @@ void List<T>::reverseNth(int n)
    int i=0;
    
    //   cout<<"here"<<endl;
-   while(endpoint->next!=NULL && i<n-1)
+   while(endpoint->next!=NULL && i<n)
      { 
        endpoint=endpoint->next;
        i++;
@@ -246,15 +254,15 @@ void List<T>::reverseNth(int n)
    
       while(startpoint->next!=NULL)
      {
-       holder=startpoint;
+       holder=startpoint->next;
        cout<<"here"<<endl;
        holder2=holder;
-       for(int x=0;holder->next!=NULL && x<n-1; x++)
+       for(int x=0;holder->next!=NULL && x<n; x++)
 	 { holder=holder->next;
 	   endpoint=holder->next;
 	 }
        cout<<"now"<<endl;
-       //       reverse(holder2,endpoint);
+         reverse(holder2,endpoint);
        cout<<"What about"<<endl;
        startpoint=holder2->next;
 
