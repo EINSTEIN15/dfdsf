@@ -1,8 +1,8 @@
-Grading r55632 by nknipfe2 committed on Tue Nov 29 09:42:53 CST 2016
+Grading r56111 by enx-cs225autograder committed on Wed Nov 30 00:46:55 CST 2016
 Monad Autograder
-Testing mp7.1 at 2016-11-30 00:31:49
+Testing mp7.1 at 2016-12-01 00:30:41
 
-"The cheapest, fastest, and most reliable components of a computer system are those that aren't there." ~ Gordon Bell
+"Most software today is very much like an Egyptian pyramid with millions of bricks piled on top of each other, with no structural integrity, but just done by brute force and thousands of slaves." ~ Alan Kay
 
 Setting up test environment...
 Compiling...
