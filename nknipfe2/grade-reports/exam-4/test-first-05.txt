@@ -1,0 +1,98 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam4-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts
+qid is first-05
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/tests/first-05/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam4-grading/submissions/nknipfe2/grade-.TTy
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function solution_first.cpp
+solution_first.cpp: In function ‘Node<int>* deleteNode(Node<int>*&, int)’:
+solution_first.cpp:82:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+:: Compiled successfully!
+:: Compiling provided code...
+
+:: Compiling test_one.
+make -s first EXTRA_OBJS=test_one.o
+:: Running test_one.
+Status is 'FAILED'
+:: Failed test_one.
+
+:: Compiling test_a_1.
+make -s first EXTRA_OBJS=test_a_1.o
+:: Running test_a_1.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/run_tests: line 107:  5279 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      5280 Done                    | head -c 30K
+:: Failed test_a_1: Exited with non-zero exit status 139.
+
+:: Compiling test_a_2.
+make -s first EXTRA_OBJS=test_a_2.o
+:: Running test_a_2.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/run_tests: line 107:  5288 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      5289 Done                    | head -c 30K
+:: Failed test_a_2: Exited with non-zero exit status 139.
+
+:: Compiling test_a_3.
+make -s first EXTRA_OBJS=test_a_3.o
+:: Running test_a_3.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/run_tests: line 107:  5300 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      5301 Done                    | head -c 30K
+:: Failed test_a_3: Exited with non-zero exit status 139.
+
+:: Compiling test_a_4.
+make -s first EXTRA_OBJS=test_a_4.o
+:: Running test_a_4.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/run_tests: line 107:  5309 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      5310 Done                    | head -c 30K
+:: Failed test_a_4: Exited with non-zero exit status 139.
+
+:: Compiling test_a_5.
+make -s first EXTRA_OBJS=test_a_5.o
+:: Running test_a_5.
+Status is 'PASSED'
+:: Passed test_a_5.
+
+:: Compiling test_a_6.
+make -s first EXTRA_OBJS=test_a_6.o
+:: Running test_a_6.
+timeout: the monitored command dumped core
+/home/mattox/repos/cs225/fa16-exam4-grading/code-grading/scripts/run_tests: line 107:  5327 Segmentation fault      env GRADE_FD=28 timeout "$TIMEOUT" ./"$exe" 28> "$grade_tmp" 2>&1
+      5328 Done                    | head -c 30K
+:: Failed test_a_6: Exited with non-zero exit status 139.
+
+Failed tests:
+- test_one
+- test_a_1
+- test_a_2
+- test_a_3
+- test_a_4
+- test_a_6
+
+Grade for question : 25/100
+
+
+~ ~ ~
+
+Grade: 25
+
+Details:
+test,grade
+_compiled,1
+_test_one,0
+_test_a_1,0
+_test_a_2,0
+_test_a_3,0
+_test_a_4,0
+_test_a_5,1
+_test_a_6,0
