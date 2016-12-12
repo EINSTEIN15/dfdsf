@@ -1,25 +1,18 @@
-Exam report for Nathan Knipfer
-==============================
+Exam 1 report for Nathan Knipfer
 
-Scores
-------
 
-  Problem                   Points
-  ----------------------- --------
-  constructors-2b              0.0
-  constructors-3b              0.0
-  km-arrays-1d                 0.0
-  km-pointersintro-2c          4.0
-  passbyvalue-5b               4.0
-  km-declarationopts-2b        4.0
-  km-firstclass-1b             4.0
-  km-makefile-1b               2.4
-  isotriangle                 18.0
+                         Problem | Score
+       --------------------------+------
+                 constructors-2b |   0
+                 constructors-3b |   0
+                    km-arrays-1d |   0
+           km-declarationopts-2b |   4
+                km-firstclass-1b |   4
+                  km-makefile-1b |   2
+             km-pointersintro-2c |   4
+                  passbyvalue-5b |   4
+       --------------------------+------
+                     isotriangle | 18.00 /  18
+       --------------------------+------
+                          Total: | 36.40 (=72.80%) 
 
-Total score: 36.4/50 (72.8%)
-
-Code Problem Test Output
-------------------------
-
-See `tests.txt` (or `tests-1.txt` and `tests-2.txt`) for autograder test
-outputs.
