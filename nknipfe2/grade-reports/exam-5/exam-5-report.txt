@@ -1,0 +1,19 @@
+Exam 5 report for Nathan Knipfer
+
+
+                         Problem | Score
+       --------------------------+------
+                    mc-cpp5-001h |   0
+                    mc-cpp5-002e |   4
+                    mc-cpp5-003d |   0
+                    mc-cpp5-005g |   4
+                    mc-cpp5-006a |   0
+                    mc-cpp5-007s |   0
+                    mc-cpp5-008d |   0
+                    mc-cpp5-009c |   0
+       --------------------------+------
+                        first-01 | 2.52 /   9
+                       second-02 | 1.44 /   9
+       --------------------------+------
+                          Total: | 11.96 (=23.92%) 
+

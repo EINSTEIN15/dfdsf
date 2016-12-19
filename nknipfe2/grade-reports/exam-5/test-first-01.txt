@@ -1,0 +1,73 @@
+CD to .. 
+/home/mattox/repos/cs225/fa16-exam5-grading/submissions/nknipfe2
+###############################
+##                           ##
+##     Grading question      ##
+##                           ##
+###############################
+Grader dir is /home/mattox/repos/cs225/fa16-exam5-grading/code-grading/scripts
+qid is first-01
+variant is
+test_dir is /home/mattox/repos/cs225/fa16-exam5-grading/code-grading/scripts/tests/first-01/
+fullTmpDir = /home/mattox/repos/cs225/fa16-exam5-grading/submissions/nknipfe2/grade-.Ivf
+:: Compiling...
+g++ -std=c++0x -c -g -O0 -Wall -Wextra -Wno-unused-function solution_first.cpp
+:: Compiled successfully!
+:: Compiling provided code...
+
+:: Compiling test_one.
+make -s first EXTRA_OBJS=test_one.o
+:: Running test_one.
+:: Failed test_one: Timed out (5s).
+
+:: Compiling test_two.
+make -s first EXTRA_OBJS=test_two.o
+:: Running test_two.
+You got 1
+Off by one
+Status is 'PASSED'
+:: Passed test_two.
+
+:: Compiling test_three.
+make -s first EXTRA_OBJS=test_three.o
+:: Running test_three.
+:: Failed test_three: Timed out (5s).
+
+:: Compiling test_four.
+make -s first EXTRA_OBJS=test_four.o
+:: Running test_four.
+:: Failed test_four: Timed out (5s).
+
+:: Compiling test_five.
+make -s first EXTRA_OBJS=test_five.o
+:: Running test_five.
+:: Failed test_five: Timed out (5s).
+
+:: Compiling test_off_by_one.
+make -s first EXTRA_OBJS=test_off_by_one.o
+:: Running test_off_by_one.
+:: Failed test_off_by_one: Timed out (5s).
+
+Failed tests:
+- test_one
+- test_three
+- test_four
+- test_five
+- test_off_by_one
+
+Grade for question : 28.57/100
+
+
+~ ~ ~
+
+Grade: 28.57
+
+Details:
+test,grade
+_compiled,1
+_test_one,0
+_test_two,1
+_test_three,0
+_test_four,0
+_test_five,0
+_test_off_by_one,0
